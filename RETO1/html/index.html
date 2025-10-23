@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>We Events!</title>
+  <style>
+    :root {
+      --color-principal: #003639;
+      --color-secundario: #000000;
+      --color-intermedio1: #002C2E;
+      --color-intermedio2: #1A1A1A;
+      --color-texto: #f4f4f4;
+      --color-acento: #00c3b3;
+    }
+
+    /* ======== MODO OSCURO (ESCALA DE GRISES) ======== */
+    body.dark {
+      --color-principal: #2c2c2c;
+      --color-secundario: #121212;
+      --color-intermedio1: #1e1e1e;
+      --color-intermedio2: #2a2a2a;
+      --color-texto: #e0e0e0;
+      --color-acento: #b3b3b3;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: var(--color-secundario);
+      color: var(--color-texto);
+      overflow-x: hidden;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    /* =================== SPLASH =================== */
+    #splash {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: var(--color-secundario);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 9999;
+      transition: opacity 1s ease, visibility 1s ease;
+    }
+
+    #splash.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    #splash img {
+      width: 120px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* =================== HEADER =================== */
+    header {
+      background-color: var(--color-principal);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header img { width: 50px; height: 50px; }
+
+    nav a {
+      color: var(--color-texto);
+      text-decoration: none;
+      margin: 0 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: var(--color-acento); }
+
+    section {
+      padding: 4rem 2rem;
+      text-align: center;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1, h2 { color: var(--color-acento); margin-bottom: 1rem; }
+
+    .eventos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background-color: var(--color-intermedio1);
+      padding: 1rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover { transform: translateY(-5px); }
+
+    form {
+      background-color: var(--color-intermedio1);
+      padding: 2rem;
+      max-width: 400px;
+      margin: 2rem auto;
+      border-radius: 10px;
+    }
+
+    form input, form select, form button {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    form input, form select {
+      background-color: var(--color-intermedio2);
+      color: var(--color-texto);
+    }
+
+    form button {
+      background-color: var(--color-acento);
+      color: var(--color-secundario);
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    form button:hover { background-color: #00b0a3; }
+
+    footer {
+      background-color: var(--color-intermedio1);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    #user-display {
+      font-size: 1.1rem;
+      color: var(--color-acento);
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- =================== SPLASH =================== -->
+  <div id="splash">
+    <img src="https://cdn-icons-png.flaticon.com/512/906/906334.png" alt="Logo We Events!">
+    <h1>We Events!</h1>
+  </div>
+
+  <!-- =================== HEADER =================== -->
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/906/906334.png" alt="Logo">
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#quienes">Quiénes Somos</a>
+      <a href="#iniciar">Iniciar Sesión</a>
+      <a href="#config">Configuración</a>
+      <a href="#crear">Crear Cuenta</a>
+    </nav>
+  </header>
+
+  <!-- =================== CONTENIDO =================== -->
+  <section id="inicio">
+    <h1>Bienvenido a We Events!</h1>
+    <p>Conecta organizadores, voluntarios y participantes para crear experiencias inolvidables.</p>
+    <div id="user-display"></div>
+    <div class="eventos">
+      <div class="card">Evento 1: Limpieza comunitaria</div>
+      <div class="card">Evento 2: Carrera solidaria</div>
+      <div class="card">Evento 3: Taller ecológico</div>
+    </div>
+  </section>
+
+  <section id="quienes">
+    <h2>¿Quiénes Somos?</h2>
+    <p>Somos un equipo dedicado a impulsar la colaboración y la participación social.</p>
+  </section>
+
+  <section id="iniciar">
+    <h2>Iniciar Sesión</h2>
+    <form id="loginForm">
+      <input type="text" id="loginName" placeholder="Nombre de usuario" required>
+      <input type="password" id="loginPass" placeholder="Contraseña" required>
+      <button type="submit">Acceder</button>
+    </form>
+  </section>
+
+  <section id="config">
+    <h2>Configuración</h2>
+    <form id="configForm">
+      <label>Modo oscuro:</label>
+      <select id="modoOscuro">
+        <option value="off">Desactivado</option>
+        <option value="on">Activado</option>
+      </select>
+      <button type="button" id="cerrarSesion">Cerrar Sesión</button>
+    </form>
+  </section>
+
+  <section id="crear">
+    <h2>Crear Cuenta</h2>
+    <form id="createForm">
+      <input type="text" id="newName" placeholder="Nombre de usuario" required>
+      <input type="password" id="newPass" placeholder="Contraseña" required>
+      <button type="submit">Registrar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 We Events! - Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // =============== SPLASH SCREEN UNA SOLA VEZ ===============
+    const splash = document.getElementById("splash");
+    if (!localStorage.getItem("visited")) {
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          splash.classList.add("fade-out");
+          localStorage.setItem("visited", "true");
+        }, 2000);
+      });
+    } else {
+      splash.style.display = "none";
+    }
+
+    // =============== GESTIÓN DE SESIÓN ===============
+    const userDisplay = document.getElementById("user-display");
+    const loginForm = document.getElementById("loginForm");
+    const createForm = document.getElementById("createForm");
+    const cerrarSesion = document.getElementById("cerrarSesion");
+    const modoOscuro = document.getElementById("modoOscuro");
+
+    function actualizarUsuario() {
+      const user = localStorage.getItem("usuario");
+      if (user) {
+        userDisplay.textContent = `Hola, ${user}!`;
+      } else {
+        userDisplay.textContent = "";
+      }
+    }
+
+    loginForm.addEventListener("submit", e => {
+      e.preventDefault();
+      const name = document.getElementById("loginName").value;
+      const pass = document.getElementById("loginPass").value;
+      const storedPass = localStorage.getItem(`user_${name}`);
+      if (storedPass && storedPass === pass) {
+        localStorage.setItem("usuario", name);
+        alert("Sesión iniciada correctamente.");
+        actualizarUsuario();
+      } else {
+        alert("Usuario o contraseña incorrectos.");
+      }
+    });
+
+    createForm.addEventListener("submit", e => {
+      e.preventDefault();
+      const name = document.getElementById("newName").value;
+      const pass = document.getElementById("newPass").value;
+      if (localStorage.getItem(`user_${name}`)) {
+        alert("El usuario ya existe.");
+        return;
+      }
+      localStorage.setItem(`user_${name}`, pass);
+      localStorage.setItem("usuario", name);
+      alert("Cuenta creada exitosamente.");
+      actualizarUsuario();
+    });
+
+    cerrarSesion.addEventListener("click", () => {
+      localStorage.removeItem("usuario");
+      alert("Sesión cerrada.");
+      actualizarUsuario();
+    });
+
+    // =============== MODO OSCURO ===============
+    function aplicarModoOscuro() {
+      const modo = localStorage.getItem("modoOscuro");
+      if (modo === "on") {
+        document.body.classList.add("dark");
+        modoOscuro.value = "on";
+      } else {
+        document.body.classList.remove("dark");
+        modoOscuro.value = "off";
+      }
+    }
+
+    modoOscuro.addEventListener("change", () => {
+      const valor = modoOscuro.value;
+      localStorage.setItem("modoOscuro", valor);
+      aplicarModoOscuro();
+    });
+
+    // =============== INICIALIZACIÓN ===============
+    actualizarUsuario();
+    aplicarModoOscuro();
+  </script>
+</body>
+</html>
