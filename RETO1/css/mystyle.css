@@ -1,165 +1,152 @@
-/* =================== PALETA DE COLORES =================== */
-    :root {
-      --color-principal: #003639;
-      --color-secundario: #000000;
-      --color-intermedio1: #002C2E;
-      --color-intermedio2: #1A1A1A;
-      --color-texto: #f4f4f4;
-      --color-acento: #00c3b3;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      background-color: var(--color-secundario);
-      color: var(--color-texto);
-      overflow-x: hidden;
-    }
-
-    /* =================== ANIMACIÓN DE CARGA =================== */
-    #splash {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: var(--color-secundario);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      z-index: 9999;
-      transition: opacity 1s ease, visibility 1s ease;
-    }
-
-    #splash.fade-out {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-#splash img {
-    margin-bottom: 20px;
-    width: 120px;
+body{
+    font-family: Arial;
+    margin: 0 auto;
+    background-color: #000000;
+    color: white;
 }
 
-    /* =================== ENCABEZADO =================== */
-    header {
-      background-color: var(--color-principal);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+header{
+    background-color: #161616;
+    color: #ffffff;
+    padding: 1vw;
+    text-align: center;
+}
 
-    header img {
-      width: 50px;
-      height: 50px;
-    }
+header input{
+    border-radius: 10px;
+    height: 30px;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 50px;
+}
 
-    nav a {
-      color: var(--color-texto);
-      text-decoration: none;
-      margin: 0 1rem;
-      transition: color 0.3s;
-    }
+header input:hover{
+    width: 180px;
+    transition: 0.8s;
+}
 
-    nav a:hover {
-      color: var(--color-acento);
-    }
+.logo{
+    width: 60px;
+    float: left;
+    margin-left: 20px;
+}
 
-    /* =================== SECCIONES =================== */
-    section {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
+#title{
+    text-align: center;
+    background-image: url(../assets/photo-1461896836934-ffe607ba8211.jpg);
+    background-size: cover;
+    height: 35vw;
+}
 
-    h1, h2 {
-      color: var(--color-acento);
-      margin-bottom: 1rem;
-    }
+#title h1{
+    padding-top: 8vw;
+    font-size: 10vw;
+    color: white;
+    margin: 0;
+}
 
-    p {
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.6;
-    }
+footer{
+    background-color: #161616;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
 
-    /* =================== TARJETAS EVENTOS =================== */
-    .eventos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
+footer ul{
+    list-style: none;
+}
 
-    .card {
-      background-color: var(--color-intermedio1);
-      padding: 1rem;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
+/*carrusel*/
+.carousel {
+  position: relative;
+  max-width: 900px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 8px;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+.carousel__viewport {
+  overflow: hidden;
+  width: 100%;
+}
 
-    /* =================== FORMULARIOS =================== */
-    form {
-      background-color: var(--color-intermedio1);
-      padding: 2rem;
-      max-width: 400px;
-      margin: 2rem auto;
-      border-radius: 10px;
-    }
+.carousel__track {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
 
-    form input, form select, form button {
-      width: 100%;
-      padding: 0.8rem;
-      margin: 0.5rem 0;
-      border: none;
-      border-radius: 5px;
-    }
+.slide {
+  min-width: 100%;
+  height: 360px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+  position: relative;
+}
 
-    form input, form select {
-      background-color: var(--color-intermedio2);
-      color: var(--color-texto);
-    }
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(245, 245, 245, 0.55), rgba(197, 185, 185, 0.15));
+  z-index: 0;
+}
 
-    form button {
-      background-color: var(--color-acento);
-      color: var(--color-secundario);
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
+.slide__content {
+  position: relative;
+  z-index: 1;
+  padding: 1.2rem;
+}
 
-    form button:hover {
-      background-color: #00b0a3;
-    }
+.slide__content h2 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.6rem;
+}
 
-    /* =================== FOOTER =================== */
-    footer {
-      background-color: var(--color-intermedio1);
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
+.slide__content p {
+  margin: 0;
+  font-size: 1rem;
+}
 
-    /* =================== ANIMACIONES DE APARICIÓN =================== */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s ease forwards;
-    }
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+.carousel__btn--prev { 
+    left: 12px;
+}
+.carousel__btn--next {
+    right: 12px;
+}
+
+.carousel__btn:focus {
+    outline: 2px solid #fff;
+}
+
+@media (max-width: 600px) {
+  .slide {
+    height: 240px;
+}
+  .slide__content h2 {
+        font-size: 1.2rem;
     }
+}
