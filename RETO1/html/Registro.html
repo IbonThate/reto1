@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+
+<body>
+    <header>
+        <h1>WE Event</h1>
+        <div class="buscador">
+            <form action="/buscar" method="get">
+                <input type="text" name="q" placeholder="Buscar...">
+            </form>
+
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Incio</a></li>
+                <li><a href="#inicio">Quienes somos</a></li>
+                <li><a href="#inicio">Iniciar sesion</a></li>
+                <li><a href="#inicio">Configuración</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <form id="registroForm">
+
+        <label for="nombre">Nombre</label></br>
+        <input type="text" name="nombre" id="nombre" required><br></br>
+
+        <label for="apellidos">Apellidos</label></br>
+        <input type="text" name="apellidos" id="apellidos" required><br></br>
+
+        <label>Género:</label></br>
+        <input type="radio" id="masculino" name="genero" value="masculino" required>
+        <label for="masculino">Masculino</label><br />
+        <input type="radio" id="femenino" name="genero" value="femenino">
+        <label for="femenino">Femenino</label><br />
+        <input type="radio" id="otro" name="genero" value="otro">
+        <label for="otro">Helicóptero apache</label><br><br />
+
+        <label for="tipoDocumento">Tipo de documento:</label></br>
+        <select id="tipoDocumento" required>
+            <option value="">Selecciona una opción</option>
+            <option value="DNI">DNI</option>
+            <option value=" NIE">NIE</option>
+            <option value="Pasaporte">Pasaporte</option>
+            <option value="Otro">Otro</option>
+            <input type="text" name="tipoDocumento" id="tipoDocumento" required><br></br>
+        </select>
+
+        <label for="correo">Corro electronico</label></br>
+        <input type="email" name="correo" id="correo" required><br></br>
+
+        <label for="telefono">Telefono</label></br>
+        <input type="tel" name="telefono" id="telefono" pattern="[0-9]{9}" placeholder="###########"><br></br>
+
+        <label for="usuario">Nombre de usuario</label></br>
+        <input type="text" name="usuario" id="usuario" minlength="4" maxlength="15" required><br></br>
+
+        <label for="fecha">Fecha de nacimiento:</label></br>
+        <input type="date" name="fecha" id="fecha" required><br></br>
+
+        <label for="pais">Pais:</label></br>
+        <select name="pais" id="pais" required>
+            <option value="">Selecciona tu país</option>
+            <option value="España">España</option>
+            <option value="Republica Dominicana">Republica Dominicana</option>
+            <option value="Honduras">Honduras</option>
+            <option value="Otro">Otro</option>
+
+        </select><br></br>
+
+        <label for="codigopostal">Codigo Postal:</label></br>
+        <input type="text" id="codigopostal" name="codigopostal" pattern="[0-9]{5}" placeholder="12345"
+            required><br></br>
+
+        <label for="contraseña">Contraseña</label></br>
+        <input type="password" name="contraseña" id="contraseña" minlength="4" maxlength="15" required><br></br>
+
+        <label for="confirmar">confirmar contraseña</label></br>
+        <input type="password" name="confirmar" id="confirmar" required><br></br>
+
+        <input type="checkbox" name="terminos" id="terminos" required>
+        <label for="terminos">Acepto los términos y condiciones</label><br></br>
+
+
+        <button type="submit">Registrarme</button>
+
+    </form>
+
+
+    <footer>
+        <p>&copy;La mejor pagina del mundo</p>
+    </footer>
+</body>
+
+</html>
