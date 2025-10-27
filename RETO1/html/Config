@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1 id="Configuracion_titulo">Ajustes y Configuración</h1>
+    </header>
+
+    <main>
+        <section class="Configuracion_container"> 
+
+            <h2>Opciones de Configuracion</h2>
+            <div id="config-cuenta" class="config-apartado">
+                <h3>👤 Cuenta</h3>
+                <p>⁕ Información de tu perfil y seguridad.</p>
+                <label for="nombre-usuario">Nombre de usuario:</label>
+                <input type="text" id="nombre-usuario" name="nombre-usuario" value="nombre de usuario" disabled>
+                <br><br>
+                <button>Cambiar Contraseña</button>
+                <button>Eliminar Cuenta</button>
+            </div>
+            
+            <br>
+
+            <div id="config-idioma" class="config-apartado">
+            <h3>🌍 Idiomas</h3>
+            <label for="select-idioma">Selecciona el idioma:</label>
+            <select id="select-idioma" name="idioma">
+                    <option value="es">Español</option>
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    </select>
+            </div>
+            
+            <br>
+
+            <div id="config-notificaciones" class="config-apartado">
+                <h3>🔔 Notificaciones</h3>
+                <p>Ajustes de cómo te notificamos.</p>
+                
+                <div>
+                    <input type="checkbox" id="notif-email" name="notif-email" checked>
+                    <label for="notif-email">Recibir notificaciones por correo electrónico</label>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="notif-push" name="notif-push">
+                    <label for="notif-push">Habilitar notificaciones push en el navegador</label>
+                </div>
+            </div>
+
+            <br>
+
+            <div id="config-informacion" class="config-apartado">
+                <h3>ℹ️ Información</h3>
+                <p>Datos sobre la aplicación y licencias.</p>
+                <ul>
+                    <li>Versión: 1.0.0</li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                </ul>
+            </div>
+
+            <br>
+
+            <div id="config-personalizacion" class="config-apartado">
+                <h3>🎨 Personalización</h3>
+                <p>Modifica el aspecto de la página.</p>
+                
+                <div>
+                    <input type="radio" id="tema-claro" name="tema" value="claro" checked>
+                    <label for="tema-claro">Tema Claro (Light Mode)</label>
+                </div>
+                
+                <div>
+                    <input type="radio" id="tema-oscuro" name="tema" value="oscuro">
+                    <label for="tema-oscuro">Tema Oscuro (Dark Mode)</label>
+                </div>
+            </div>
+            
+            <br>
+
+            <button class="guardar-cambios">Guardar Cambios</button>
+
+            <br><br><br>
+
+            <footer>
+            <p>&copy; [2025] Los guapos de DAW</p>
+    </footer>
+</section>
+    </main>
+</body>
+</html>
