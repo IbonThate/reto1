@@ -1,0 +1,135 @@
+#login-toggle:checked ~ #login-modal {
+  opacity: 1;
+  visibility: visible;
+  backdrop-filter: blur(10px) brightness(0.7);
+}
+
+#login-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(10px);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 51, 57, 0.6) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, backdrop-filter 0.4s ease;
+  z-index: 3000;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  cursor: default;
+
+}
+
+.login-box {
+  position: relative;
+  z-index: 1;
+
+  border-radius: 12px;
+  padding: 2rem;
+  width: 320px;
+  background-color: white;
+
+  transform: translateY(-40px) scale(0.95);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+#login-toggle:checked ~ #login-modal .login-box {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.login-box h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: black;
+  font-size: 1.6rem;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.login-box label {
+  font-size: 0.9rem;
+  color: black;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  color: var(--text);
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+.login-box input[type="text"]:focus,
+.login-box input[type="password"]:focus {
+  border-color: var(--accent);
+  background: rgba(40,40,40,1);
+  outline: none;
+}
+
+.login-box input[type="submit"] {
+  background-color: #003339;;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.login-box input[type="submit"]:hover {
+  background-color: rgb(3, 141, 156);
+  transform: scale(1.03);
+}
+
+.login-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.5rem;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.login-close:hover {
+  color: var(--accent);
+}
+
+.nav-login {
+  display: block;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-login:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+#login-modal form a{
+  color: rgb(0, 153, 255);
+  text-decoration: none;
+}
