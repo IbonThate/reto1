@@ -3,10 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/login.css">
     <title>Contacto</title>
     
 </head>
 <body>
+    <header>
+        <a href="index.html"><img src="../assets/2-removebg-preview.png" alt="" class="logo"></a>
+        <div id="search">
+          <input type="search" placeholder="Buscar">
+        </div>
+    <nav class="main-nav">
+          <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">
+            <span class="hamburger"></span>
+          </button>
+    
+    
+          <ul class="nav-list" id="menu-list">
+            <!--<li><a href="/html/index.html">Inicio</a></li>-->
+            <li><a href="/html/sobrenosotros.html">Nosotros</a></li>
+            <li><label for="login-toggle" class="nav-login">Iniciar sesión</label></li>
+            <li><a href="/html/Registro.html">Registro</a></li>
+          </ul>
+        </nav>
+      </header>
+
+  <!-- LOGIN --------------------------------------------------------->
+<input type="checkbox" id="login-toggle" hidden>
+
+  <div id="login-modal">
+    <label for="login-toggle" class="modal-overlay"></label>
+    <div class="login-box">
+      <label for="login-toggle" class="login-close">&times;</label>
+      <h1>Iniciar sesión</h1>
+      <form>
+        <label for="mail">Correo electrónico</label>
+        <input type="text" name="mail" id="mail" required>
+        <label for="pwd">Contraseña</label>
+        <input type="password" name="pwd" id="pwd" required>
+        <label for="register">¿No tienes aún cuenta? <a class="register" href="Registro.html">Registrate</a></label>
+        <input type="submit" value="Entrar">
+      </form>
+    </div>
+  </div>
+
     <div class="contenedor-formulario">
         <h2>Contáctanos</h2>
         <p>Por favor, completa el siguiente formulario y nos pondremos en contacto contigo lo antes posible.</p>
@@ -51,5 +92,21 @@
             
         </form>
     </div>
+
+    <footer>
+        <ul>
+          <li>Contactanos</li>
+          <ul>
+            <li>+34000000000</li>
+            <li>weevents@gmail.com</li>
+            <li><a href=""><img src="" alt=""></a></li>
+            <li><a href=""><img src="" alt=""></a></li>
+          </ul>
+          <li><a href="">¿Quienes somos?</a></li>
+        </ul>
+        <p>&copy; 2025 WE EVENTS. Todos los derechos reservados.</p>
+      </footer>
+
+      <script src="../js/menu.js"></script>
 </body>
 </html>
