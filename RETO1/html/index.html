@@ -1,74 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/mystyle.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/login.css">
   <title>Document</title>
 </head>
-<body>
 
+<body>
   <div id="splash">
-  <img src="../assets/logo.png" alt="Logo" class="splash-logo">
-</div>
+    <img src="../assets/2-removebg-preview.png" alt="Logo" class="splash-logo">
+  </div>
 
   <header>
-    <a href="index.html"><img src="../assets/logo.png" alt="" class="logo"></a>
+    <a href="index.html"><img src="../assets/2-removebg-preview.png" alt="" class="logo"></a>
     <div id="search">
       <input type="search" placeholder="Buscar">
     </div>
-<nav class="main-nav">
+
+    <nav class="main-nav">
       <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">
         <span class="hamburger"></span>
       </button>
 
-
       <ul class="nav-list" id="menu-list">
         <!--<li><a href="/html/index.html">Inicio</a></li>-->
+        <li><a href="/html/sobrenosotros.html">Nosotros</a></li>
         <li><a href="/html/contacto.html">Contacto</a></li>
-        <li><a href="/html/login.html">Login</a></li>
+        <li><label for="login-toggle" class="nav-login">Iniciar sesión</label></li>
         <li><a href="/html/Registro.html">Registro</a></li>
       </ul>
     </nav>
-
-    <!--<details class="header__menu" aria-label="Menú">
-      <summary class="header__menu-btn" aria-haspopup="true" aria-expanded="false">
-        Menu <span class="chev" aria-hidden="true">▾</span>
-      </summary>
-      <nav class="header__menu-list" role="menu" aria-label="Opciones del usuario">
-        <a href="#" role="menuitem"></a>
-        <a href="#" role="menuitem"></a>
-        <a href="#" role="menuitem">Ajustes</a>
-        <a href="#" role="menuitem">Cerrar sesión</a>
-      </nav>
-    </details>-->
-
   </header>
 
   <div id="title">
     <h1>WE EVENTS!</h1>
   </div>
 
+<section id="cat">
+  <div class="cat">
+    <img src="assets/eventos-fijos.jpg" alt="Eventos Fijos">
+    <h2>Eventos Fijos</h2>
+  </div>
+  <div class="cat">
+    <img src="assets/eventos-desplazados.jpg" alt="Eventos que se Desplazan">
+    <h2>Eventos que se Desplazan</h2>
+  </div>
+</section>
+
+
   <section class="carousel" aria-label="Carrusel de eventos">
+    <h1>EVENTOS DESTACADOS</h1>
     <button class="carousel__btn carousel__btn--prev" aria-label="Anterior">&lt;</button>
 
     <div class="carousel__viewport">
       <div class="carousel__track">
-        <div class="slide" style="background-image: url('../assets/ciclista-andar-en-bicicleta-en-la-naturaleza.jpg');">
+        <div class="slide" style="background-image: url('../assets/ciclicta2.jpg');">
           <div class="slide__content">
             <h2>Evento 1</h2>
             <p>Descripción breve del evento 1.</p>
           </div>
         </div>
 
-        <div class="slide" style="background-image: url('../assets/01_Sports-Social-1536x864.jpg');">
+        <div class="slide" style="background-image: url('../assets/persona.jpg');">
           <div class="slide__content">
             <h2>Evento 2</h2>
             <p>Descripción breve del evento 2.</p>
           </div>
         </div>
 
-        <div class="slide" style="background-image: url('../assets/mujer-ciclista-profesional-de-tiro-medio.jpg');">
+        <div class="slide" style="background-image: url('../assets/fd1947f777301ab625c095996176849c.jpg');">
           <div class="slide__content">
             <h2>Evento 3</h2>
             <p>Descripción breve del evento 3.</p>
@@ -79,10 +82,6 @@
 
     <button class="carousel__btn carousel__btn--next" aria-label="Siguiente">&gt;</button>
   </section>
-
-<section id="">
-
-</section>
 
   <footer>
     <ul>
@@ -96,10 +95,31 @@
       <li><a href="">¿Quienes somos?</a></li>
     </ul>
     <p>&copy; 2025 WE EVENTS. Todos los derechos reservados.</p>
+    <p>Politica de privacidad | Uso de cookies | Condiciones de uso | Avisos legales </p>
   </footer>
+
+  <!-- LOGIN --------------------------------------------------------->
+  <input type="checkbox" id="login-toggle" hidden>
+
+  <div id="login-modal">
+    <label for="login-toggle" class="modal-overlay"></label>
+    <div class="login-box">
+      <label for="login-toggle" class="login-close">&times;</label>
+      <h1>Iniciar sesión</h1>
+      <form>
+        <label for="mail">Correo electrónico</label>
+        <input type="text" name="mail" id="mail" required>
+        <label for="pwd">Contraseña</label>
+        <input type="password" name="pwd" id="pwd" required>
+        <label for="register">¿No tienes aún cuenta? <a class="register" href="Registro.html">Registrate</a></label>
+        <input type="submit" value="Entrar">
+      </form>
+    </div>
+  </div>
 
   <script src="../js/carousel.js"></script>
   <script src="../js/menu.js"></script>
   <script src="../js/splash.js"></script>
 </body>
+
 </html>
