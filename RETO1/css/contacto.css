@@ -1,0 +1,89 @@
+
+.contenedor-formulario {
+    background-color: #ffffff; /* Fondo completamente blanco */
+    padding: 30px 40px;
+    border-radius: 10px;
+    /* Sombra fuerte para efecto de "flotante" */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25); 
+    width: 100%;
+    max-width: 450px; 
+    /* Agregamos un poco de margen para que no toque los bordes en pantallas pequeñas */
+    margin: 50px 450px 20px; 
+}
+
+.contenedor-formulario h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.contenedor-formulario p {
+    color: #777;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 0.9em;
+}
+
+/* --- Estilos de los Campos (Sin cambios funcionales aquí) --- */
+.campo-formulario {
+    margin-bottom: 18px;
+}
+
+.campo-formulario label {
+    display: block; 
+    margin-bottom: 6px;
+    font-weight: 600; 
+    color: #555;
+    font-size: 0.9em;
+}
+
+.campo-formulario input[type="text"],
+.campo-formulario input[type="email"],
+.campo-formulario input[type="tel"],
+.campo-formulario select,
+.campo-formulario textarea {
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-size: 1em;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+    border-color: #003339; 
+    box-shadow: 0 0 8px rgba(rgb(0, 106, 117)); 
+    outline: none; 
+}
+
+.campo-formulario textarea {
+    resize: vertical; 
+}
+
+/* --- Estilos del Botón de Envío (Ligeramente ajustado) --- */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background-color: #000000; 
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 25px;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838; 
+}
+
+button[type="submit"]:active {
+    transform: translateY(1px); 
+}

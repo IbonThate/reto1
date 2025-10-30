@@ -123,32 +123,6 @@ header {
   text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
-/* FOOTER -------------------------------------------------------------------------------------------------------------------------------------------------*/
-footer{
-  background: linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(0, 51, 57, 1) 26%, rgba(0, 0, 0, 1) 100%);
- 
-}
-
-footer > ul{
-  display:flex;
-  flex-direction:column;
-  gap:0.5rem;
-  align-items: center;
-  padding:0;
-}
-
-footer a{
-  color: var(--accent);
-  text-decoration: none;
-}
-
-footer p{
-  text-align: center;
-  margin-top: 0.75rem;
-  padding-top: 1rem;
-  font-size:0.9rem;
-}
-
 /*MENU PRUEBA-----------------------------------------------------------------------------------------------------------------------------------------*/
 .main-nav {
   float: right;
@@ -493,7 +467,7 @@ float: right;
   outline-offset: 2px;
 }
 
-/* RESPONSIVE ------------------------*/
+/* RESPONSIVE ----------------------------------------------------------*/
 @media (min-width: 720px){
   header{
     padding: 1rem 1.25rem;
@@ -534,7 +508,7 @@ float: right;
   }
 }
 
-/* SPLASH ------------------------*/
+/* SPLASH ----------------------------------------------------------*/
 #splash {
   position: fixed;
   inset: 0;
