@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../css/index.css">
   <link rel="stylesheet" href="../css/login.css">
   <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/registro.css">
   <title>Document</title>
 </head>
 
@@ -31,7 +32,8 @@
         <li><a href="/RETO1/html/sobrenosotros.html">Nosotros</a></li>
         <li><a href="/RETO1/html/contacto.html">Contacto</a></li>
         <li><label for="login-toggle" class="nav-login">Iniciar sesión</label></li>
-        <li><a href="/RETO1/html/Registro.html">Registro</a></li>
+        <li><label for="register-toggle" class="nav-register">Registrarse</label></li>
+        <li><a href="/RETO1/html/Configuracion.html">Configuración</a></li>
       </ul>
     </nav>
   </header>
@@ -42,12 +44,10 @@
 
   <section id="cat">
     <div class="cat">
-      <img src="assets/eventos-fijos.jpg" alt="Eventos Fijos">
       <h2>Eventos Fijos</h2>
     </div>
     <div class="cat">
-      <img src="assets/eventos-desplazados.jpg" alt="Eventos que se Desplazan">
-      <h2>Eventos que se Desplazan</h2>
+      <h2>Eventos Dinámicos</h2>
     </div>
   </section>
 
@@ -149,24 +149,101 @@
     </div>
   </div>
 
-  <!--Registro------------------------------------------------------>
-  <input type="checkbox" id="login-toggle" hidden>
+  <!--Registro------------------------------------------------------
+  <input type="checkbox" id="register-toggle" hidden>
+
+  <div id="register-modal">
+    <label for="register-toggle" class="modal-overlay"></label>
+    <div class="register-box">
+      <label for="register-toggle" class="register-close">&times;</label>
+      <h1>Registrarse</h1>
+      <form>
+        <label for="mail">Correo electrónico</label>
+        <input type="text" name="mail" id="mail" required>
+        <label for="pwd">Contraseña</label>
+        <input type="password" name="pwd" id="pwd" required>
+        <label for="register">¿No tienes aún cuenta? <a class="register" href="Registro.html">Registrate</a></label>
+        <input type="submit" value="Entrar">
+      </form>
+    </div>
+  </div>-->
   
-  <div class="registro">
-    <h1>Elige tu tipo de cuenta</h1>
-    <form action="#" method="post">
-      <label>
-        <input type="radio" name="tipo_cuenta" value="usuario" required>
-        Usuario
-      </label>
-      <label>
-        <input type="radio" name="tipo_cuenta" value="organizador">
-        Organizador
-      </label>
-      <br><br>
-      <button type="submit">Continuar</button>
+ <input type="checkbox" id="register-toggle" hidden>
+
+<div id="register-modal">
+  <label for="register-toggle" class="modal-overlay"></label>
+  <div class="register-box">
+    <label for="register-toggle" class="register-close">&times;</label>
+    <h1>Registrarse</h1>
+
+    <form>
+      <p class="account-text">Selecciona el tipo de cuenta:</p>
+
+      <div class="account-type">
+        <input type="radio" id="type-org" name="type" checked>
+        <label for="type-org" title="Usuario especial que puede crear eventos y administrarlos">Organizador</label>
+
+        <input type="radio" id="type-cas" name="type">
+        <label for="type-cas" title="Usuario normal que puede asistir a eventos como participante o voluntario">Casual</label>
+      </div>
+
+      <div class="form-wrapper">
+        <div class="form-organizador">
+          <label for="dni-org">NIF / DNI</label>
+          <input type="text" id="dni-org" name="dni-org">
+
+          <label for="tipo-empresa">Tipo de empresa</label>
+          <select id="tipo-empresa" name="tipo-empresa">
+            <option>Persona individual</option>
+            <option>Grupo pequeño</option>
+            <option>Empresa grande</option>
+          </select>
+
+          <label for="cantidad">Cantidad de personas (si aplica)</label>
+          <input type="number" id="cantidad" name="cantidad" min="1" max="500">
+
+          <label for="empresa">Nombre de empresa</label>
+          <input type="text" id="empresa" name="empresa">
+
+          <label for="mail-org">Correo electrónico</label>
+          <input type="email" id="mail-org" name="mail-org">
+
+          <label for="pwd-org">Contraseña</label>
+          <input type="password" id="pwd-org" name="pwd-org">
+
+          <input type="submit" value="Crear cuenta de Organizador">
+        </div>
+
+        <div class="form-casual">
+          <label for="dni-cas">DNI</label>
+          <input type="text" id="dni-cas" name="dni-cas">
+
+          <label for="nombre">Nombre y apellidos</label>
+          <input type="text" id="nombre" name="nombre">
+
+          <label for="pais">País</label>
+          <input type="text" id="pais" name="pais">
+
+          <label for="cp">Código postal</label>
+          <input type="text" id="cp" name="cp">
+
+          <label for="telefono">Teléfono</label>
+          <input type="text" id="telefono" name="telefono">
+
+          <label for="gmail">Correo electrónico</label>
+          <input type="email" id="gmail" name="gmail">
+
+          <label for="pwd-cas">Contraseña</label>
+          <input type="password" id="pwd-cas" name="pwd-cas">
+
+          <input type="submit" value="Crear cuenta Casual">
+        </div>
+      </div>
     </form>
   </div>
+</div>
+
+
 
   <script src="../js/carousel.js"></script>
   <script src="../js/menu.js"></script>

@@ -1,16 +1,25 @@
-#login-toggle:checked ~ #login-modal {
+#register-toggle:checked ~ #register-modal {
   opacity: 1;
   visibility: visible;
   backdrop-filter: blur(10px) brightness(0.7);
+  overflow-y: auto;
 }
 
-#login-modal {
+#register-toggle:checked ~ #register-modal,
+#register-toggle:checked ~ #register-modal * {
+  overscroll-behavior: contain;
+}
+
+#register-toggle:checked ~ body {
+  overflow: hidden;
+}
+
+#register-modal {
   position: fixed;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-
   backdrop-filter: blur(10px);
   background: linear-gradient(
     90deg,
@@ -18,11 +27,27 @@
     rgba(0, 51, 57, 0.6) 50%,
     rgba(0, 0, 0, 0.5) 100%
   );
-
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s ease, backdrop-filter 0.4s ease;
   z-index: 3000;
+  overflow: hidden;
+}
+
+.register-box {
+  position: relative;
+  z-index: 1;
+  border-radius: 12px;
+  padding: 2rem;
+  width: min(95%, 380px);
+  background-color: white;
+  transform: translateY(-40px) scale(0.95);
+  opacity: 0;
+  transition: all 0.4s ease;
+  max-height: 85vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #003339 #dcdcdc;
 }
 
 .modal-overlay {
@@ -32,27 +57,426 @@
 
 }
 
-.login-box {
-  position: relative;
-  z-index: 1;
-
-  border-radius: 12px;
-  padding: 2rem;
-  width: 320px;
-  background-color: white;
-
-  transform: translateY(-40px) scale(0.95);
-  opacity: 0;
-  transition: all 0.4s ease;
-}
-
-#login-toggle:checked ~ #login-modal .login-box {
+#register-toggle:checked ~ #register-modal .register-box {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
 
-.login-box h1 {
+.register-box h1 {
   text-align: center;
   margin-bottom: 1.5rem;
   color: rgb(0, 0, 0);
-  font-size: 1.6rem;}
+  font-size: 1.6rem;
+}
+
+.register-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.register-box label {
+  font-size: 0.9rem;
+  color: rgb(0, 0, 0);
+}
+
+.register-box input[type="text"],
+.register-box input[type="password"] {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  color: var(--text);
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+.register-box input[type="text"]:focus,
+.register-box input[type="password"]:focus {
+  border-color: var(--accent);
+  background: rgb(8, 8, 8);
+  outline: none;
+}
+
+.register-box input[type="submit"] {
+  background-color: #003339;;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.register-box input[type="submit"]:hover {
+  background-color: rgb(3, 141, 156);
+  transform: scale(1.03);
+}
+
+.register-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.5rem;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.register-close:hover {
+  color: var(--accent);
+}
+
+.nav-register {
+  display: block;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-register:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+#register-modal form a{
+  color: rgb(0, 153, 255);
+  text-decoration: none;
+}
+
+/* TIPO CUENTA -------------------------------------------*/
+.account-choice {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.account-choice input[type="radio"] {
+  display: none;
+}
+
+.account-choice label {
+  background: #e3e3e3;
+  color: #003639;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#tipo-organizador:checked + label[for="tipo-organizador"],
+#tipo-casual:checked + label[for="tipo-casual"] {
+  background: #003639;
+  color: white;
+}
+
+.form-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 440px;
+}
+
+.form-wrapper form {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#tipo-organizador:checked ~ .form-wrapper .form-organizador {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+}
+
+#tipo-casual:checked ~ .form-wrapper .form-casual {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+select {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.6rem;
+  background: white;
+  color: #000;
+}
+
+.register-box {
+  max-height: 90vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #003639 #dcdcdc;
+}
+
+.account-choice {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.account-choice input[type="radio"] {
+  display: none;
+}
+
+.account-choice label {
+  background: #e3e3e3;
+  color: #003339;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.account-choice input[type="radio"]:checked + label {
+  background: #003639;
+  color: white;
+}
+
+.form-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 440px;
+}
+
+.form-wrapper form {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Mostrar según elección */
+.register-box:has(#tipo-organizador:checked) .form-organizador {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+}
+
+.register-box:has(#tipo-casual:checked) .form-casual {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+select {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.6rem;
+  background: white;
+  color: #000;
+}
+
+/* Permitir scroll si es muy largo */
+.register-box {
+  max-height: 90vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #003639 #dcdcdc;
+}
+
+#register-modal {
+  overscroll-behavior: contain;
+}
+
+.register-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.register-box::-webkit-scrollbar-thumb {
+  background: #003639;
+  border-radius: 4px;
+}
+
+.account-type {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem 0;
+  background: #e9e9e9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.account-type input {
+  display: none;
+}
+
+.account-type label {
+  flex: 1;
+  text-align: center;
+  padding: 0.6rem;
+  cursor: pointer;
+  color: #000;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.account-type input:checked + label {
+  background: #003639;
+  color: #fff;
+}
+
+/* Formularios */
+.form-organizador,
+.form-casual {
+  display: none;
+  animation: fadeForm 0.5s ease forwards;
+}
+
+@keyframes fadeForm {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Mostrar según selección */
+#type-org:checked ~ label[for="type-org"],
+#type-cas:checked ~ label[for="type-cas"] {
+  background: #003639;
+  color: #fff;
+}
+
+#type-org:checked ~ .form-organizador {
+  display: flex;
+  flex-direction: column;
+}
+
+#type-cas:checked ~ .form-casual {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-text {
+  color: #000;
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.account-type {
+  display: flex;
+  justify-content: center;
+  background: #e9e9e9;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.account-type input {
+  display: none;
+}
+
+.account-type label {
+  flex: 1;
+  text-align: center;
+  padding: 0.6rem;
+  cursor: pointer;
+  color: #000;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.account-type input:checked + label {
+  background: #003639;
+  color: #fff;
+}
+
+/* Contenedor con scroll interno */
+.form-wrapper {
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 5px;
+  scrollbar-width: thin;
+  scrollbar-color: #003639 #e0e0e0;
+}
+
+.form-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.form-wrapper::-webkit-scrollbar-thumb {
+  background: #003639;
+  border-radius: 4px;
+}
+
+/* Formularios */
+.form-organizador,
+.form-casual {
+  display: none;
+  flex-direction: column;
+  gap: 0.6rem;
+  animation: fadeForm 0.5s ease;
+}
+
+@keyframes fadeForm {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mostrar el formulario correspondiente */
+#type-org:checked ~ label[for="type-org"] ~ input#type-cas ~ label[for="type-cas"] ~ .form-wrapper .form-organizador {
+  display: flex;
+}
+
+#type-cas:checked ~ .form-wrapper .form-casual {
+  display: flex;
+}
+
+/* Ajuste de campos */
+.register-box input[type="text"],
+.register-box input[type="password"],
+.register-box input[type="email"],
+.register-box select,
+.register-box input[type="number"] {
+  background: #111;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  color: #fff;
+}
+
+.register-box input[type="text"]:focus,
+.register-box input[type="password"]:focus,
+.register-box input[type="email"]:focus,
+.register-box select:focus,
+.register-box input[type="number"]:focus {
+  border-color: var(--accent);
+  background: #000;
+  outline: none;
+}
+
+/*--- BLOQUEO DE SCROLL -----------------------------------------*/
+#register-toggle:checked ~ #register-modal {
+  overflow-y: auto;
+}
+
+body:has(#register-toggle:checked) {
+  overflow: hidden;
+}
