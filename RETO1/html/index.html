@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="../css/login.css">
   <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../css/registro.css">
-  <title>Document</title>
+  <link rel="stylesheet" href="../css/contacto.css">
+  <title>Inicio</title>
 </head>
 
 <body>
@@ -16,6 +17,7 @@
     <img src="../assets/2-removebg-preview.png" alt="Logo" class="splash-logo">
   </div>
 
+<!--HEADER----------------------------------------------------------------------------------------------------------------------------->
   <header>
     <a href="index.html"><img src="../assets/2-removebg-preview.png" alt="" class="logo"></a>
     <div id="search">
@@ -28,7 +30,6 @@
       </button>
 
       <ul class="nav-list" id="menu-list">
-        <!--<li><a href="/html/index.html">Inicio</a></li>-->
         <li><a href="/RETO1/html/sobrenosotros.html">Nosotros</a></li>
         <li><a href="/RETO1/html/contacto.html">Contacto</a></li>
         <li><label for="login-toggle" class="nav-login">Iniciar sesión</label></li>
@@ -44,10 +45,10 @@
 
   <section id="cat">
     <div class="cat">
-      <h2>Eventos Fijos</h2>
+      <h2><a href="">Eventos Fijos</a></h2>
     </div>
     <div class="cat">
-      <h2>Eventos Dinámicos</h2>
+      <h2><a href="">Eventos Dinámicos</a></h2>
     </div>
   </section>
 
@@ -84,6 +85,7 @@
     <button class="carousel__btn carousel__btn--next" aria-label="Siguiente">&gt;</button>
   </section>
 
+<!--FOOTER----------------------------------------------------------------------------------------------------------------------------->
   <footer>
   <div class="footer-top">
     <div>
@@ -129,8 +131,7 @@
   </div>
 </footer>
 
-
-  <!-- LOGIN --------------------------------------------------------->
+  <!-- LOGIN -------------------------------------------------------------------------------------------------------------------------->
   <input type="checkbox" id="login-toggle" hidden>
 
   <div id="login-modal">
@@ -143,105 +144,100 @@
         <input type="text" name="mail" id="mail" required>
         <label for="pwd">Contraseña</label>
         <input type="password" name="pwd" id="pwd" required>
-        <label for="register">¿No tienes aún cuenta? <a class="register" href="Registro.html">Registrate</a></label>
+        <label for="register">¿No tienes aún cuenta? <label for="register-toggle" class="register">Registrarse</label></label>
         <input type="submit" value="Entrar">
       </form>
     </div>
   </div>
 
-  <!--Registro------------------------------------------------------
-  <input type="checkbox" id="register-toggle" hidden>
-
-  <div id="register-modal">
-    <label for="register-toggle" class="modal-overlay"></label>
-    <div class="register-box">
-      <label for="register-toggle" class="register-close">&times;</label>
-      <h1>Registrarse</h1>
-      <form>
-        <label for="mail">Correo electrónico</label>
-        <input type="text" name="mail" id="mail" required>
-        <label for="pwd">Contraseña</label>
-        <input type="password" name="pwd" id="pwd" required>
-        <label for="register">¿No tienes aún cuenta? <a class="register" href="Registro.html">Registrate</a></label>
-        <input type="submit" value="Entrar">
-      </form>
-    </div>
-  </div>-->
-  
- <input type="checkbox" id="register-toggle" hidden>
+  <!-- REGISTRO ----------------------------------------------------------------------------------------------------------------------->
+<input type="checkbox" id="register-toggle" hidden>
 
 <div id="register-modal">
   <label for="register-toggle" class="modal-overlay"></label>
   <div class="register-box">
     <label for="register-toggle" class="register-close">&times;</label>
-    <h1>Registrarse</h1>
+    <h1>Crear cuenta</h1>
 
-    <form>
-      <p class="account-text">Selecciona el tipo de cuenta:</p>
+    <div class="account-type">
+      <button id="organizador-btn" class="active">Organizador</button>
+      <button id="casual-btn">Casual</button>
+    </div>
 
-      <div class="account-type">
-        <input type="radio" id="type-org" name="type" checked>
-        <label for="type-org" title="Usuario especial que puede crear eventos y administrarlos">Organizador</label>
+    <!-- FORMULARIO ORGANIZADOR -->
+    <form id="organizador-form" class="form-section active">
+      <label for="nif">NIF / DNI</label>
+      <input type="text" id="nif" name="nif" required>
 
-        <input type="radio" id="type-cas" name="type">
-        <label for="type-cas" title="Usuario normal que puede asistir a eventos como participante o voluntario">Casual</label>
+      <label for="tipo-empresa">Tipo de empresa</label>
+      <select id="tipo-empresa" name="tipo-empresa" required>
+        <option value="persona">Una persona</option>
+        <option value="grupo">Grupo de personas</option>
+        <option value="grande">Empresa grande</option>
+      </select>
+
+      <div id="cantidad-container" style="display:none;">
+        <label for="cantidad">Cantidad de personas</label>
+        <input type="number" id="cantidad" name="cantidad" min="2" max="100">
       </div>
 
-      <div class="form-wrapper">
-        <div class="form-organizador">
-          <label for="dni-org">NIF / DNI</label>
-          <input type="text" id="dni-org" name="dni-org">
+      <label for="nombre-empresa">Nombre de empresa</label>
+      <input type="text" id="nombre-empresa" name="nombre-empresa">
 
-          <label for="tipo-empresa">Tipo de empresa</label>
-          <select id="tipo-empresa" name="tipo-empresa">
-            <option>Persona individual</option>
-            <option>Grupo pequeño</option>
-            <option>Empresa grande</option>
-          </select>
+      <input type="submit" value="Registrar">
+    </form>
 
-          <label for="cantidad">Cantidad de personas (si aplica)</label>
-          <input type="number" id="cantidad" name="cantidad" min="1" max="500">
+    <!-- FORMULARIO CASUAL -->
+    <form id="casual-form" class="form-section">
+      <label for="dni">DNI</label>
+      <input type="text" id="dni" name="dni" required>
 
-          <label for="empresa">Nombre de empresa</label>
-          <input type="text" id="empresa" name="empresa">
+      <label for="nombre">Nombre y apellidos</label>
+      <input type="text" id="nombre" name="nombre" required>
 
-          <label for="mail-org">Correo electrónico</label>
-          <input type="email" id="mail-org" name="mail-org">
+      <label for="pais">País</label>
+      <input type="text" id="pais" name="pais" required>
 
-          <label for="pwd-org">Contraseña</label>
-          <input type="password" id="pwd-org" name="pwd-org">
+      <label for="codigo">Código postal</label>
+      <input type="text" id="codigo" name="codigo" required>
 
-          <input type="submit" value="Crear cuenta de Organizador">
-        </div>
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="telefono" required>
 
-        <div class="form-casual">
-          <label for="dni-cas">DNI</label>
-          <input type="text" id="dni-cas" name="dni-cas">
+      <label for="gmail">Correo electrónico</label>
+      <input type="email" id="gmail" name="gmail" required>
 
-          <label for="nombre">Nombre y apellidos</label>
-          <input type="text" id="nombre" name="nombre">
-
-          <label for="pais">País</label>
-          <input type="text" id="pais" name="pais">
-
-          <label for="cp">Código postal</label>
-          <input type="text" id="cp" name="cp">
-
-          <label for="telefono">Teléfono</label>
-          <input type="text" id="telefono" name="telefono">
-
-          <label for="gmail">Correo electrónico</label>
-          <input type="email" id="gmail" name="gmail">
-
-          <label for="pwd-cas">Contraseña</label>
-          <input type="password" id="pwd-cas" name="pwd-cas">
-
-          <input type="submit" value="Crear cuenta Casual">
-        </div>
-      </div>
+      <input type="submit" value="Registrar">
     </form>
   </div>
 </div>
+
+<script>
+  const organizadorBtn = document.getElementById("organizador-btn");
+  const casualBtn = document.getElementById("casual-btn");
+  const organizadorForm = document.getElementById("organizador-form");
+  const casualForm = document.getElementById("casual-form");
+  const tipoEmpresa = document.getElementById("tipo-empresa");
+  const cantidadContainer = document.getElementById("cantidad-container");
+
+  organizadorBtn.addEventListener("click", () => {
+    organizadorBtn.classList.add("active");
+    casualBtn.classList.remove("active");
+    organizadorForm.classList.add("active");
+    casualForm.classList.remove("active");
+  });
+
+  casualBtn.addEventListener("click", () => {
+    casualBtn.classList.add("active");
+    organizadorBtn.classList.remove("active");
+    casualForm.classList.add("active");
+    organizadorForm.classList.remove("active");
+  });
+
+  tipoEmpresa.addEventListener("change", () => {
+    cantidadContainer.style.display = tipoEmpresa.value === "grande" ? "block" : "none";
+  });
+</script>
 
 
 

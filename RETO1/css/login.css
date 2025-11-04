@@ -65,13 +65,13 @@
 }
 
 .login-box label {
-  font-size: 0.9rem;
   color: rgb(0, 0, 0);
+  font-size: 0.9rem;
 }
 
 .login-box input[type="text"],
 .login-box input[type="password"] {
-  background: white;
+  background: #ffffff;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 0.6rem 0.75rem;
@@ -82,7 +82,7 @@
 .login-box input[type="text"]:focus,
 .login-box input[type="password"]:focus {
   border-color: var(--accent);
-  background: rgb(8, 8, 8);
+  background: #000f11;
   outline: none;
 }
 

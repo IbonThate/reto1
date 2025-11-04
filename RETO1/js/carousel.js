@@ -1,5 +1,3 @@
-// Simple carrusel: botones izquierda/derecha y wrap-around
-
 const track = document.querySelector('.carousel__track');
 const slides = Array.from(track.children);
 const btnPrev = document.querySelector('.carousel__btn--prev');
@@ -21,7 +19,3 @@ btnPrev.addEventListener('click', () => {
   index = (index - 1 + slides.length) % slides.length;
   update();
 });
-
-/* También se puede avanzar automáticamente si se desea:
-setInterval(() => { index = (index + 1) % slides.length; update(); }, 5000);
-*/
