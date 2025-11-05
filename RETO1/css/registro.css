@@ -50,6 +50,19 @@
   cursor: pointer;
 }
 
+.nav-register {
+  display: block;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-register:hover {
+  background: rgba(255,255,255,0.1);
+}
+
 h1 {
   text-align: center;
   font-weight: 600;

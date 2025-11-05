@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/registro.css">
     <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="stylesheet" href="../css/configuracion.css">
     <title>Configuración</title>
 </head>
 
-<body>
+<body class="dark-mode">
 
 <!--HEADER----------------------------------------------------------------------------------------------------------------------------->
     <header>
@@ -32,6 +33,7 @@
                 <li><a href="/RETO1/html/contacto.html">Contacto</a></li>
                 <li><label for="login-toggle" class="nav-login">Iniciar sesión</label></li>
                <li><a href="/RETO1/html/index.html#register-modal">Registro</a></li>  
+               <div id="google_translate_element"></div>
             </ul>
         </nav>
     </header>
@@ -93,26 +95,11 @@
 
             <br>
 
-            <div id="config-personalizacion" class="config-apartado">
-                <h3>🎨 Personalización</h3>
-                <p>Modifica el aspecto de la página.</p>
-
-                <div>
-                    <input type="radio" id="tema-claro" name="tema" value="claro" checked>
-                    <label for="tema-claro">Tema Claro (Light Mode)</label>
-                </div>
-
-                <div>
-                    <input type="radio" id="tema-oscuro" name="tema" value="oscuro">
-                    <label for="tema-oscuro">Tema Oscuro (Dark Mode)</label>
-                </div>
-            </div>
-
-            <br>
-
             <button class="guardar-cambios">Guardar Cambios</button>
 
             <br><br><br>
+        </section>
+    </main>
 <!--FOOTER----------------------------------------------------------------------------------------------------------------------------->
             <footer>
                 <div class="footer-top">
@@ -159,9 +146,19 @@
                 </div>
             </footer>
 
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                new google.translate.TranslateElement(
+                {pageLanguage: 'es'}, // idioma original de la página
+                'google_translate_element' // id del contenedor
+                );
+                }
+                </script>
+
+
+            <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
             <script src="../js/menu.js"></script>
-        </section>
-    </main>
+
 </body>
 
 </html>

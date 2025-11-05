@@ -1,0 +1,141 @@
+ /* ======== Variables base ======== */
+:root {
+    --color-fondo: #000000;
+    --color-texto: #333;
+    --color-primario: #02a8bb;
+    --color-secundario: #161616;
+    --color-borde: #e1e4e8;
+    --color-boton: #02a8bb;
+    --color-boton-hover: #003339;
+    --color-sombra: rgba(0, 0, 0, 0.1);
+}
+
+
+/* ======== Estilos generales ======== */
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* ======== Contenedor principal ======== */
+.Configuracion_container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: var(--color-secundario);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--color-sombra);
+    padding: 40px;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* ======== Títulos ======== */
+.Configuracion_container h2 {
+    text-align: center;
+    color: var(--color-texto);
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--color-primario);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.config-apartado {
+    background: var(--color-secundario);
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    transition: box-shadow 0.2s ease, background 0.3s;
+}
+
+.config-apartado:hover {
+    box-shadow: 0 4px 8px var(--color-sombra);
+}
+
+/* ======== Subtítulos ======== */
+.config-apartado h3 {
+    margin-top: 0;
+    color: var(--color-primario);
+}
+
+/* ======== Inputs y selects ======== */
+input[type="text"],
+select {
+    padding: 10px;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 1em;
+    margin-top: 8px;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    transition: background 0.3s, color 0.3s;
+}
+
+input[type="text"]:disabled {
+    background-color: rgba(200, 200, 200, 0.1);
+    color: #999;
+}
+
+/* ======== Checkboxes y radios ======== */
+.config-apartado input[type="checkbox"],
+.config-apartado input[type="radio"] {
+    accent-color: var(--color-primario);
+    transform: scale(1.1);
+    margin-right: 8px;
+}
+
+/* ======== Botones ======== */
+button {
+    background-color: var(--color-boton);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: var(--color-boton-hover);
+}
+
+button.guardar-cambios {
+    display: block;
+    width: 100%;
+    font-size: 1.1em;
+    margin-top: 30px;
+}
+
+/* ======== Enlaces ======== */
+a {
+    color: var(--color-primario);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* ======== Responsivo ======== */
+@media (max-width: 600px) {
+    .Configuracion_container {
+        padding: 25px;
+    }
+
+    input[type="text"],
+    select {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}

@@ -13,6 +13,8 @@
   --radius: 10px;
 }
 
+
+
 html,body{
   height:100%;
 }
@@ -139,7 +141,7 @@ header {
 }
 
 .nav-list {
-float: right;
+  float: right;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -167,7 +169,8 @@ float: right;
   display: block;
   padding: 10px 15px;
   text-decoration: none;
-  color: white;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
 }
 
 .nav-list.open {
@@ -307,14 +310,14 @@ float: right;
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin: 4rem auto;
+  margin-top: 50px;
   width: 100%;
   flex-wrap: wrap;
 }
 
 .cat {
   position: relative;
-  width: 280px;
+  width: 400px;
   height: 100px;
   border-radius: 6px;
   overflow: hidden;
@@ -365,7 +368,7 @@ float: right;
   position: relative;
   width: 100%;
   max-width: var(--max-width);
-  margin: 1.5rem auto;
+  margin: 0 auto;
   border-radius: var(--radius);
   overflow: visible;
   padding: 0.25rem;

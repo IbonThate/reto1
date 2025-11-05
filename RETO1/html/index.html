@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -34,7 +34,9 @@
         <li><a href="/RETO1/html/contacto.html">Contacto</a></li>
         <li><label for="login-toggle" class="nav-login">Iniciar sesión</label></li>
         <li><label for="register-toggle" class="nav-register">Registrarse</label></li>
-        <li><a href="/RETO1/html/Configuracion.html">Configuración</a></li>
+        <!--<li><a href="/RETO1/html/Configuracion.html">Configuración</a></li>-->
+        
+        <div id="google_translate_element"></div>
       </ul>
     </nav>
   </header>
@@ -61,22 +63,22 @@
       <div class="carousel__track">
         <div class="slide" style="background-image: url('../assets/ciclicta2.jpg');">
           <div class="slide__content">
-            <h2>Evento 1</h2>
-            <p>Descripción breve del evento 1.</p>
+            <h2>Ciclismo</h2>
+            <p>Descripción breve del evento de Ciclismo.</p>
           </div>
         </div>
 
         <div class="slide" style="background-image: url('../assets/persona.jpg');">
           <div class="slide__content">
-            <h2>Evento 2</h2>
-            <p>Descripción breve del evento 2.</p>
+            <h2>Maraton</h2>
+            <p>Descripción breve de la Maratón.</p>
           </div>
         </div>
 
         <div class="slide" style="background-image: url('../assets/fd1947f777301ab625c095996176849c.jpg');">
           <div class="slide__content">
-            <h2>Evento 3</h2>
-            <p>Descripción breve del evento 3.</p>
+            <h2>Tennis</h2>
+            <p>Descripción breve del evento de Tennis.</p>
           </div>
         </div>
       </div>
@@ -169,22 +171,19 @@
       <label for="nif">NIF / DNI</label>
       <input type="text" id="nif" name="nif" required>
 
-      <label for="tipo-empresa">Tipo de empresa</label>
-      <select id="tipo-empresa" name="tipo-empresa" required>
-        <option value="persona">Una persona</option>
-        <option value="grupo">Grupo de personas</option>
-        <option value="grande">Empresa grande</option>
-      </select>
-
-      <div id="cantidad-container" style="display:none;">
+      <div id="cantidad-container">
         <label for="cantidad">Cantidad de personas</label>
-        <input type="number" id="cantidad" name="cantidad" min="2" max="100">
+        <input type="radio" name="cantidad-personas" id="cantidad-personas">
+        <label for=""></label>
+        <input type="radio" name="cantidad-personas" id="cantidad-personas">
+        <input type="radio" name="cantidad-personas" id="cantidad-personas">
       </div>
 
       <label for="nombre-empresa">Nombre de empresa</label>
       <input type="text" id="nombre-empresa" name="nombre-empresa">
 
       <input type="submit" value="Registrar">
+       <label for="login">¿Ya tienes una cuenta? <label for="login-toggle" class="login">Inicia sesión</label></label>
     </form>
 
     <!-- FORMULARIO CASUAL -->
@@ -202,48 +201,31 @@
       <input type="text" id="codigo" name="codigo" required>
 
       <label for="telefono">Teléfono</label>
-      <input type="tel" id="telefono" name="telefono" required>
+      <input type="tel" id="telefono" name="telefono" required placeholder="+34 666666666">
 
       <label for="gmail">Correo electrónico</label>
-      <input type="email" id="gmail" name="gmail" required>
+      <input type="email" id="gmail" name="gmail" required placeholder="tunombre@gmail.com">
 
       <input type="submit" value="Registrar">
+       <label for="login">¿Ya tienes una cuenta? <label for="login-toggle" class="login">Inicia sesión</label></label>
     </form>
   </div>
 </div>
 
-<script>
-  const organizadorBtn = document.getElementById("organizador-btn");
-  const casualBtn = document.getElementById("casual-btn");
-  const organizadorForm = document.getElementById("organizador-form");
-  const casualForm = document.getElementById("casual-form");
-  const tipoEmpresa = document.getElementById("tipo-empresa");
-  const cantidadContainer = document.getElementById("cantidad-container");
-
-  organizadorBtn.addEventListener("click", () => {
-    organizadorBtn.classList.add("active");
-    casualBtn.classList.remove("active");
-    organizadorForm.classList.add("active");
-    casualForm.classList.remove("active");
-  });
-
-  casualBtn.addEventListener("click", () => {
-    casualBtn.classList.add("active");
-    organizadorBtn.classList.remove("active");
-    casualForm.classList.add("active");
-    organizadorForm.classList.remove("active");
-  });
-
-  tipoEmpresa.addEventListener("change", () => {
-    cantidadContainer.style.display = tipoEmpresa.value === "grande" ? "block" : "none";
-  });
-</script>
-
-
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+  {pageLanguage: 'es'}, // idioma original de la página
+  'google_translate_element' // id del contenedor
+  );
+  }
+  </script>
 
   <script src="../js/carousel.js"></script>
   <script src="../js/menu.js"></script>
   <script src="../js/splash.js"></script>
+  <script src="../js/registro.js"></script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
