@@ -18,5 +18,6 @@
         "titleBar.inactiveBackground": "#00363999",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#003639"
+    "peacock.color": "#003639",
+    "livePreview.defaultPreviewPath": "/RETO1/html/index.html"
 }
