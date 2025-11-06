@@ -35,7 +35,6 @@
         <li><label for="login-toggle" class="nav-login">Iniciar sesión</label></li>
         <li><label for="register-toggle" class="nav-register">Registrarse</label></li>
         <!--<li><a href="/RETO1/html/Configuracion.html">Configuración</a></li>-->
-        
         <div id="google_translate_element"></div>
       </ul>
     </nav>
@@ -45,6 +44,7 @@
     <h1>WE EVENTS!</h1>
   </div>
 
+<!--CATEGORIAS-------------------------------------------------------------------->
   <section id="cat">
     <div class="cat">
       <h2><a href="">Eventos Fijos</a></h2>
@@ -54,7 +54,7 @@
     </div>
   </section>
 
-
+<!--CARRuSEL-------------------------------------------------------------------------------->
   <section class="carousel" aria-label="Carrusel de eventos">
     <h1>EVENTOS DESTACADOS</h1>
     <button class="carousel__btn carousel__btn--prev" aria-label="Anterior">&lt;</button>
@@ -87,7 +87,7 @@
     <button class="carousel__btn carousel__btn--next" aria-label="Siguiente">&gt;</button>
   </section>
 
-<!--FOOTER----------------------------------------------------------------------------------------------------------------------------->
+<!--FOOTER------------------------------------------------------------------------------------------------------->
   <footer>
   <div class="footer-top">
     <div>
@@ -133,13 +133,14 @@
   </div>
 </footer>
 
-  <!-- LOGIN -------------------------------------------------------------------------------------------------------------------------->
-  <input type="checkbox" id="login-toggle" hidden>
-
+  <!-- LOGIN ---------------------------------------------------------------->
+  <input type="radio" name="modal-toggle" id="close-toggle" checked hidden> 
+  <input type="radio" name="modal-toggle" id="login-toggle" hidden>
   <div id="login-modal">
     <label for="login-toggle" class="modal-overlay"></label>
+    <label for="close-toggle" class="modal-overlay"></label>
     <div class="login-box">
-      <label for="login-toggle" class="login-close">&times;</label>
+      <label for="close-toggle" class="login-close">&times;</label>
       <h1>Iniciar sesión</h1>
       <form>
         <label for="mail">Correo electrónico</label>
@@ -152,38 +153,44 @@
     </div>
   </div>
 
-  <!-- REGISTRO ----------------------------------------------------------------------------------------------------------------------->
-<input type="checkbox" id="register-toggle" hidden>
+  <!-- REGISTRO -------------------------------------------------------->
+  <input type="radio" name="modal-toggle" id="register-toggle" hidden>
+  <input type="radio" name="modal-toggle" id="close-register-toggle" checked hidden>
 
 <div id="register-modal">
-  <label for="register-toggle" class="modal-overlay"></label>
+  <label for="close-register-toggle" class="modal-overlay"></label>
   <div class="register-box">
-    <label for="register-toggle" class="register-close">&times;</label>
+    <label for="close-register-toggle" class="register-close">&times;</label>
     <h1>Crear cuenta</h1>
 
     <div class="account-type">
       <button id="organizador-btn" class="active">Organizador</button>
       <button id="casual-btn">Casual</button>
     </div>
-
+    
     <!-- FORMULARIO ORGANIZADOR -->
     <form id="organizador-form" class="form-section active">
       <label for="nif">NIF / DNI</label>
       <input type="text" id="nif" name="nif" required>
 
       <div id="cantidad-container">
-        <label for="cantidad">Cantidad de personas</label>
+        <label for="cantidad">Cantidad de personas</label><br>
         <input type="radio" name="cantidad-personas" id="cantidad-personas">
-        <label for=""></label>
+        <label for="">menos de 50</label><br>
         <input type="radio" name="cantidad-personas" id="cantidad-personas">
+        <label for="">50 - 100</label><br>
         <input type="radio" name="cantidad-personas" id="cantidad-personas">
+        <label for="">100 - 500</label><br>
+        <input type="radio" name="cantidad-personas" id="cantidad-personas">
+        <label for="">mas de 500</label>
       </div>
 
-      <label for="nombre-empresa">Nombre de empresa</label>
+      <label for="nombre-empresa">Nombre de la empresa</label>
       <input type="text" id="nombre-empresa" name="nombre-empresa">
+      
+      <label for="login">¿Ya tienes una cuenta? <label for="login-toggle" class="login">Inicia sesión</label></label>
 
       <input type="submit" value="Registrar">
-       <label for="login">¿Ya tienes una cuenta? <label for="login-toggle" class="login">Inicia sesión</label></label>
     </form>
 
     <!-- FORMULARIO CASUAL -->
@@ -206,8 +213,9 @@
       <label for="gmail">Correo electrónico</label>
       <input type="email" id="gmail" name="gmail" required placeholder="tunombre@gmail.com">
 
+      <label for="login">¿Ya tienes una cuenta? <label for="login-toggle" class="login">Inicia sesión</label></label>
+
       <input type="submit" value="Registrar">
-       <label for="login">¿Ya tienes una cuenta? <label for="login-toggle" class="login">Inicia sesión</label></label>
     </form>
   </div>
 </div>

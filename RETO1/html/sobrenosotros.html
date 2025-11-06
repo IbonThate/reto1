@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/registro.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/nosotros.css">
     <link rel="stylesheet" href="../css/contacto.css">
     <title>Document</title>
 </head>
 <body>
-    <div id="google_translate_element"></div>
     <header>
         <a href="index.html"><img src="../assets/2-removebg-preview.png" alt="" class="logo"></a>
         <div id="search">
@@ -28,9 +28,9 @@
             <li><a href="/RETO1/html/contacto.html">Contacto</a></li>
             <li><label for="login-toggle" class="nav-login">Iniciar sesión</label></li>
             <li><label for="register-toggle" class="nav-register">Registrarse</label></li>
+            <div id="google_translate_element"></div>
             <!--<li><a href="/RETO1/html/Configuracion.html">Configuración</a></li>-->
-            <div id="google_translate_element"></div>  
-        </ul>
+            </ul>
         </nav>
       </header>
 
@@ -47,13 +47,77 @@
         <input type="text" name="mail" id="mail" required>
         <label for="pwd">Contraseña</label>
         <input type="password" name="pwd" id="pwd" required>
-        <label for="register">¿No tienes aún cuenta? <a class="register" href="Registro.html">Registrate</a></label>
+        <label for="register">¿No tienes aún cuenta? <label for="register-toggle" class="register">Registrarse</label></label>
         <input type="submit" value="Entrar">
       </form>
     </div>
   </div>
 
+<!-- REGISTRO ----------------------------------------------------------------------------------------------------------------------->
+  <input type="checkbox" id="register-toggle" hidden>
 
+<div id="register-modal">
+  <label for="register-toggle" class="modal-overlay"></label>
+  <div class="register-box">
+    <label for="register-toggle" class="register-close">&times;</label>
+    <h1>Crear cuenta</h1>
+
+    <div class="account-type">
+      <button id="organizador-btn" class="active">Organizador</button>
+      <button id="casual-btn">Casual</button>
+    </div>
+
+    <!-- FORMULARIO ORGANIZADOR -->
+    <form id="organizador-form" class="form-section active">
+      <label for="nif">NIF / DNI</label>
+      <input type="text" id="nif" name="nif" required>
+
+      <div id="cantidad-container">
+        <label for="cantidad">Cantidad de personas</label><br>
+        <input type="radio" name="cantidad-personas" id="cantidad-personas">
+        <label for="">menos de 50</label><br>
+        <input type="radio" name="cantidad-personas" id="cantidad-personas">
+        <label for="">50 - 100</label><br>
+        <input type="radio" name="cantidad-personas" id="cantidad-personas">
+        <label for="">100 - 500</label><br>
+        <input type="radio" name="cantidad-personas" id="cantidad-personas">
+        <label for="">mas de 500</label>
+      </div>
+
+      <label for="nombre-empresa">Nombre de la empresa</label>
+      <input type="text" id="nombre-empresa" name="nombre-empresa">
+      
+      <label for="login">¿Ya tienes una cuenta? <label for="login-toggle" class="login">Inicia sesión</label></label>
+
+      <input type="submit" value="Registrar">
+    </form>
+
+    <!-- FORMULARIO CASUAL -->
+    <form id="casual-form" class="form-section">
+      <label for="dni">DNI</label>
+      <input type="text" id="dni" name="dni" required>
+
+      <label for="nombre">Nombre y apellidos</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="pais">País</label>
+      <input type="text" id="pais" name="pais" required>
+
+      <label for="codigo">Código postal</label>
+      <input type="text" id="codigo" name="codigo" required>
+
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="telefono" required placeholder="+34 666666666">
+
+      <label for="gmail">Correo electrónico</label>
+      <input type="email" id="gmail" name="gmail" required placeholder="tunombre@gmail.com">
+
+      <label for="login">¿Ya tienes una cuenta? <label for="login-toggle" class="login">Inicia sesión</label></label>
+
+      <input type="submit" value="Registrar">
+    </form>
+  </div>
+</div>
 
   <section class="hero">
     <div class="hero-overlay"></div>
@@ -248,6 +312,7 @@
       <p>&copy; 2025 WE EVENTS. Todos los derechos reservados.</p>
     </div>
   </footer>
+
   <script type="text/javascript">
     function googleTranslateElementInit() {
     new google.translate.TranslateElement(
@@ -256,8 +321,9 @@
     );
     }
     </script>
-  
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src="../js/registro.js"></script>
     <script src="../js/menu.js"></script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </body>
 </html>

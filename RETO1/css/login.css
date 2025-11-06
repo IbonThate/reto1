@@ -130,7 +130,10 @@
   background: rgba(255,255,255,0.1);
 }
 
-#login-modal form a{
-  color: rgb(0, 153, 255);
-  text-decoration: none;
+.register{
+  cursor: pointer;
+}
+
+.register:hover{
+  color: #003639;
 }
