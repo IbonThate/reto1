@@ -26,6 +26,10 @@
   cursor: pointer;
 }
 
+.register-box .login {
+  color: blue;
+}
+
 .register-box {
   position: relative;
   background: #ffffff;
@@ -151,17 +155,18 @@ input[type="submit"]:hover {
 .form-section {
   opacity: 0;
   transform: translateY(10px);
-  position: absolute;
-  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
   transition: all 0.4s ease;
+  padding: 0;
   width: 100%;
 }
 
 .form-section.active {
   opacity: 1;
   transform: translateY(0);
-  position: relative;
-  visibility: visible;
+  overflow: visible;
+  max-height: 1000px;
 }
 
 .register-box::-webkit-scrollbar {

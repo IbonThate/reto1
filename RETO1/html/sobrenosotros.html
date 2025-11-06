@@ -34,89 +34,91 @@
         </nav>
       </header>
 
-<!-- LOGIN --------------------------------------------------------->
-  <input type="checkbox" id="login-toggle" hidden>
-
-  <div id="login-modal">
-    <label for="login-toggle" class="modal-overlay"></label>
-    <div class="login-box">
-      <label for="login-toggle" class="login-close">&times;</label>
-      <h1>Iniciar sesión</h1>
-      <form>
-        <label for="mail">Correo electrónico</label>
-        <input type="text" name="mail" id="mail" required>
-        <label for="pwd">Contraseña</label>
-        <input type="password" name="pwd" id="pwd" required>
-        <label for="register">¿No tienes aún cuenta? <label for="register-toggle" class="register">Registrarse</label></label>
-        <input type="submit" value="Entrar">
-      </form>
-    </div>
+<!-- LOGIN ---------------------------------------------------------------->
+<input type="radio" name="modal-toggle" id="close-toggle" checked hidden> 
+<input type="radio" name="modal-toggle" id="login-toggle" hidden>
+<div id="login-modal">
+  <label for="login-toggle" class="modal-overlay"></label>
+  <label for="close-toggle" class="modal-overlay"></label>
+  <div class="login-box">
+    <label for="close-toggle" class="login-close">&times;</label>
+    <h1>Iniciar sesión</h1>
+    <form>
+      <label for="mail">Correo electrónico</label>
+      <input type="text" name="mail" id="mail" required>
+      <label for="pwd">Contraseña</label>
+      <input type="password" name="pwd" id="pwd" required>
+      <label for="register">¿No tienes aún cuenta? <label for="register-toggle" class="register">Registrarse</label></label>
+      <input type="submit" value="Entrar">
+    </form>
   </div>
+</div>
 
-<!-- REGISTRO ----------------------------------------------------------------------------------------------------------------------->
-  <input type="checkbox" id="register-toggle" hidden>
+<!-- REGISTRO -------------------------------------------------------->
+<input type="radio" name="modal-toggle" id="register-toggle" hidden>
+<input type="radio" name="modal-toggle" id="close-register-toggle" checked hidden>
 
 <div id="register-modal">
-  <label for="register-toggle" class="modal-overlay"></label>
-  <div class="register-box">
-    <label for="register-toggle" class="register-close">&times;</label>
-    <h1>Crear cuenta</h1>
+<label for="close-register-toggle" class="modal-overlay"></label>
+<div class="register-box">
+  <label for="close-register-toggle" class="register-close">&times;</label>
+  <h1>Crear cuenta</h1>
 
-    <div class="account-type">
-      <button id="organizador-btn" class="active">Organizador</button>
-      <button id="casual-btn">Casual</button>
+  <div class="account-type">
+    <button id="organizador-btn" class="active">Organizador</button>
+    <button id="casual-btn">Casual</button>
+  </div>
+  
+  <!-- FORMULARIO ORGANIZADOR -->
+  <form id="organizador-form" class="form-section active">
+    <label for="nif">NIF / DNI</label>
+    <input type="text" id="nif" name="nif" required>
+
+    <div id="cantidad-container">
+      <label for="cantidad">Cantidad de personas</label><br>
+      <input type="radio" name="cantidad-personas" id="cantidad-personas">
+      <label for="">menos de 50</label><br>
+      <input type="radio" name="cantidad-personas" id="cantidad-personas">
+      <label for="">50 - 100</label><br>
+      <input type="radio" name="cantidad-personas" id="cantidad-personas">
+      <label for="">100 - 500</label><br>
+      <input type="radio" name="cantidad-personas" id="cantidad-personas">
+      <label for="">mas de 500</label>
     </div>
 
-    <!-- FORMULARIO ORGANIZADOR -->
-    <form id="organizador-form" class="form-section active">
-      <label for="nif">NIF / DNI</label>
-      <input type="text" id="nif" name="nif" required>
+    <label for="nombre-empresa">Nombre de la empresa</label>
+    <input type="text" id="nombre-empresa" name="nombre-empresa">
+    
+    <label for="login">¿Ya tienes una cuenta? <label for="login-toggle" class="login">Inicia sesión</label></label>
 
-      <div id="cantidad-container">
-        <label for="cantidad">Cantidad de personas</label><br>
-        <input type="radio" name="cantidad-personas" id="cantidad-personas">
-        <label for="">menos de 50</label><br>
-        <input type="radio" name="cantidad-personas" id="cantidad-personas">
-        <label for="">50 - 100</label><br>
-        <input type="radio" name="cantidad-personas" id="cantidad-personas">
-        <label for="">100 - 500</label><br>
-        <input type="radio" name="cantidad-personas" id="cantidad-personas">
-        <label for="">mas de 500</label>
-      </div>
+    <input type="submit" value="Registrar">
+  </form>
 
-      <label for="nombre-empresa">Nombre de la empresa</label>
-      <input type="text" id="nombre-empresa" name="nombre-empresa">
-      
-      <label for="login">¿Ya tienes una cuenta? <label for="login-toggle" class="login">Inicia sesión</label></label>
+  <!-- FORMULARIO CASUAL -->
+  <form id="casual-form" class="form-section">
+    <label for="dni">DNI</label>
+    <input type="text" id="dni" name="dni" required>
 
-      <input type="submit" value="Registrar">
-    </form>
+    <label for="nombre">Nombre y apellidos</label>
+    <input type="text" id="nombre" name="nombre" required>
 
-    <!-- FORMULARIO CASUAL -->
-    <form id="casual-form" class="form-section">
-      <label for="dni">DNI</label>
-      <input type="text" id="dni" name="dni" required>
+    <label for="pais">País</label>
+    <input type="text" id="pais" name="pais" required>
 
-      <label for="nombre">Nombre y apellidos</label>
-      <input type="text" id="nombre" name="nombre" required>
+    <label for="codigo">Código postal</label>
+    <input type="text" id="codigo" name="codigo" required>
 
-      <label for="pais">País</label>
-      <input type="text" id="pais" name="pais" required>
+    <label for="telefono">Teléfono</label>
+    <input type="tel" id="telefono" name="telefono" required placeholder="+34 666666666">
 
-      <label for="codigo">Código postal</label>
-      <input type="text" id="codigo" name="codigo" required>
+    <label for="gmail">Correo electrónico</label>
+    <input type="email" id="gmail" name="gmail" required placeholder="tunombre@gmail.com">
 
-      <label for="telefono">Teléfono</label>
-      <input type="tel" id="telefono" name="telefono" required placeholder="+34 666666666">
+    <label for="login">¿Ya tienes una cuenta? <label for="login-toggle" class="login">Inicia sesión</label></label>
 
-      <label for="gmail">Correo electrónico</label>
-      <input type="email" id="gmail" name="gmail" required placeholder="tunombre@gmail.com">
-
-      <label for="login">¿Ya tienes una cuenta? <label for="login-toggle" class="login">Inicia sesión</label></label>
-
-      <input type="submit" value="Registrar">
-    </form>
-  </div>
+    <input type="submit" value="Registrar">
+  </form>
+</div>
 </div>
 
   <section class="hero">
@@ -214,40 +216,49 @@
         <div class="team-grid">
             <div class="team-card">
                 <div class="team-image">
-                    <img src="/placeholder.svg?height=400&width=350" alt="María González">
+                    <img src="/placeholder.svg?height=400&width=350" alt="Jefe">
                 </div>
                 <div class="team-info">
-                    <h3 class="team-name">María González</h3>
-                    <p class="team-role">Directora Ejecutiva</p>
+                    <h3 class="team-name">Jeferson Montes</h3>
+                    <p class="team-role">Finalizador</p>
                 </div>
             </div>
             <div class="team-card">
                 <div class="team-image">
-                    <img src="/placeholder.svg?height=400&width=350" alt="Carlos Ruiz">
+                    <img src="/placeholder.svg?height=400&width=350" alt="Benat ">
                 </div>
                 <div class="team-info">
-                    <h3 class="team-name">Carlos Ruiz</h3>
-                    <p class="team-role">Director de Tecnología</p>
+                    <h3 class="team-name">Beñat Garzon</h3>
+                    <p class="team-role">Cohesionador</p>
                 </div>
             </div>
             <div class="team-card">
                 <div class="team-image">
-                    <img src="/placeholder.svg?height=400&width=350" alt="Ana Martínez">
+                    <img src="/placeholder.svg?height=400&width=350" alt="Kilian">
                 </div>
                 <div class="team-info">
-                    <h3 class="team-name">Ana Martínez</h3>
-                    <p class="team-role">Coordinadora de Comunidad</p>
+                    <h3 class="team-name">Kilian Sanglier</h3>
+                    <p class="team-role">Coordinador</p>
                 </div>
             </div>
             <div class="team-card">
                 <div class="team-image">
-                    <img src="/placeholder.svg?height=400&width=350" alt="Luis Torres">
+                    <img src="/placeholder.svg?height=400&width=350" alt="Ibon">
                 </div>
                 <div class="team-info">
-                    <h3 class="team-name">Luis Torres</h3>
-                    <p class="team-role">Coordinador de Eventos</p>
+                    <h3 class="team-name">Ibon Thate</h3>
+                    <p class="team-role">Especialista</p>
                 </div>
             </div>
+            <div class="team-card">
+              <div class="team-image">
+                  <img src="/placeholder.svg?height=400&width=350" alt="Ander">
+              </div>
+              <div class="team-info">
+                  <h3 class="team-name">Ander Chamorro</h3>
+                  <p class="team-role">Creativo</p>
+              </div>
+          </div>
         </div>
     </div>
 </section>

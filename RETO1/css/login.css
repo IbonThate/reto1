@@ -137,3 +137,7 @@
 .register:hover{
   color: #003639;
 }
+.login-box .register {
+  color: blue;
+  
+}
