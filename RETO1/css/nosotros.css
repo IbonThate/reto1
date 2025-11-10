@@ -32,6 +32,17 @@
     object-fit: cover;
     z-index: 1;
   }
+  #hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: -1; 
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
   
   .hero-overlay {
     position: absolute;
@@ -56,6 +67,7 @@
     letter-spacing: 4px;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
+    color: #ffffff;
   }
   
   .hero-subtitle {
