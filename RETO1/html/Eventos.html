@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="stylesheet" href="../css/registro.css">
+    <link rel="stylesheet" href="../css/Eventos.css">
+    <title>Contacto</title>
+    
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="../assets/2-removebg-preview.png" alt="" class="logo"></a>
+        <div id="search">
+          <input type="search" placeholder="Buscar">
+        </div>
+    <nav class="main-nav">
+          <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">
+            <span class="hamburger"></span>
+          </button>
+    
+    
+          <ul class="nav-list" id="menu-list">
+            <li><a href="/RETO1/html/index.html">Inicio</a></li>
+            <li><a href="/RETO1/html/sobrenosotros.html">Nosotros</a></li>
+            <li><a href="/RETO1/html/Contacto.html">Contacto</a></li>
+            <li><label for="login-toggle" class="nav-login">Iniciar sesión</label></li>
+            <li><label for="register-toggle" class="nav-register">Registrarse</label></li>
+            <!--<li><a href="/RETO1/html/Configuracion.html">Configuración</a></li>-->
+            <div id="google_translate_element"></div>
+          </ul>
+        </nav>
+      </header>
+
+<!-- LOGIN ---------------------------------------------------------------->
+<input type="radio" name="modal-toggle" id="close-toggle" checked hidden> 
+<input type="radio" name="modal-toggle" id="login-toggle" hidden>
+<div id="login-modal">
+  <label for="login-toggle" class="modal-overlay"></label>
+  <label for="close-toggle" class="modal-overlay"></label>
+  <div class="login-box">
+    <label for="close-toggle" class="login-close">&times;</label>
+    <h1>Iniciar sesión</h1>
+    <form>
+      <label for="mail">Correo electrónico</label>
+      <input type="text" name="mail" id="mail" required>
+      <label for="pwd">Contraseña</label>
+      <input type="password" name="pwd" id="pwd" required>
+      <label for="register">¿No tienes aún cuenta? <label for="register-toggle" class="register">Registrarse</label></label>
+      <input type="submit" value="Entrar">
+    </form>
+  </div>
+</div>
+
+<!-- REGISTRO -------------------------------------------------------->
+<input type="radio" name="modal-toggle" id="register-toggle" hidden>
+<input type="radio" name="modal-toggle" id="close-register-toggle" checked hidden>
+
+<div id="register-modal">
+<label for="close-register-toggle" class="modal-overlay"></label>
+<div class="register-box">
+  <label for="close-register-toggle" class="register-close">&times;</label>
+  <h1>Crear cuenta</h1>
+
+  <div class="account-type">
+    <button id="organizador-btn" class="active">Organizador</button>
+    <button id="casual-btn">Casual</button>
+  </div>
+  
+  <!-- FORMULARIO ORGANIZADOR -->
+  <form id="organizador-form" class="form-section active">
+    <label for="nif">NIF / DNI</label>
+    <input type="text" id="nif" name="nif" required>
+
+    <div id="cantidad-container">
+      <label for="cantidad">Cantidad de personas</label><br>
+      <input type="radio" name="cantidad-personas" id="cantidad-personas">
+      <label for="">menos de 50</label><br>
+      <input type="radio" name="cantidad-personas" id="cantidad-personas">
+      <label for="">50 - 100</label><br>
+      <input type="radio" name="cantidad-personas" id="cantidad-personas">
+      <label for="">100 - 500</label><br>
+      <input type="radio" name="cantidad-personas" id="cantidad-personas">
+      <label for="">mas de 500</label>
+    </div>
+
+    <label for="nombre-empresa">Nombre de la empresa</label>
+    <input type="text" id="nombre-empresa" name="nombre-empresa">
+    
+    <label for="login">¿Ya tienes una cuenta? <label for="login-toggle" class="login">Inicia sesión</label></label>
+
+    <input type="submit" value="Registrar">
+  </form>
+
+  <!-- FORMULARIO CASUAL -->
+  <form id="casual-form" class="form-section">
+    <label for="dni">DNI</label>
+    <input type="text" id="dni" name="dni" required>
+
+    <label for="nombre">Nombre y apellidos</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="pais">País</label>
+    <input type="text" id="pais" name="pais" required>
+
+    <label for="codigo">Código postal</label>
+    <input type="text" id="codigo" name="codigo" required>
+
+    <label for="telefono">Teléfono</label>
+    <input type="tel" id="telefono" name="telefono" required placeholder="+34 666666666">
+
+    <label for="gmail">Correo electrónico</label>
+    <input type="email" id="gmail" name="gmail" required placeholder="tunombre@gmail.com">
+
+    <label for="login">¿Ya tienes una cuenta? <label for="login-toggle" class="login">Inicia sesión</label></label>
+
+    <input type="submit" value="Registrar">
+  </form>
+</div>
+</div>
+
+    
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h2 class="hero-title">ÚNETE COMO VOLUNTARIO</h2>
+        <p class="hero-subtitle">Forma parte de los eventos de ciclismo más emocionantes</p>
+    </div>
+</section>
+
+<!-- Events Section -->
+<section class="events-section" id="eventos">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">PRÓXIMOS EVENTOS</h2>
+            <p class="section-subtitle">Selecciona un evento y regístrate como voluntario</p>
+        </div>
+
+        <div class="events-grid">
+            <!-- Event Card 1 -->
+            <div class="event-card">
+                <div class="event-badge">PRÓXIMAMENTE</div>
+                <div class="event-image" style="background: linear-gradient(135deg, #1a4d2e 0%, #2d7a4f 100%);">
+                    <div class="event-date">
+                        <span class="date-day">15</span>
+                        <span class="date-month">MAY</span>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">Marathon Bilbao</h3>
+                    <p class="event-location">📍 Bilbao, Gran via 85</p>
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Distancia:</span>
+                            <span class="detail-value">120 km</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Voluntarios:</span>
+                            <span class="detail-value">12 / 20</span>
+                        </div>
+                    </div>
+                    <div class="event-roles">
+                        <span class="role-tag">Hidratación</span>
+                        <span class="role-tag">Señalización</span>
+                        <span class="role-tag">Meta</span>
+                    </div>
+                    <button class="btn-primary" onclick="showSuccess()">Inscribirme</button>
+                </div>
+            </div>
+
+            <!-- Event Card 2 -->
+            <div class="event-card">
+                <div class="event-badge event-badge-hot">POPULAR</div>
+                <div class="event-image" style="background: linear-gradient(135deg, #c44536 0%, #e05b4d 100%);">
+                    <div class="event-date">
+                        <span class="date-day">22</span>
+                        <span class="date-month">MAY</span>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">Orbea monegros</h3>
+                    <p class="event-location">📍 Huesca</p>
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Distancia:</span>
+                            <span class="detail-value">145 km</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Voluntarios:</span>
+                            <span class="detail-value">8 / 15</span>
+                        </div>
+                    </div>
+                    <div class="event-roles">
+                        <span class="role-tag">Registro</span>
+                        <span class="role-tag">Avituallamiento</span>
+                        <span class="role-tag">Mecánica</span>
+                    </div>
+                    <button class="btn-primary" onclick="showSuccess()">Inscribirme</button>
+                </div>
+            </div>
+
+            <!-- Event Card 3 -->
+            <div class="event-card">
+                <div class="event-badge">PRÓXIMAMENTE</div>
+                <div class="event-image" style="background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 100%);">
+                    <div class="event-date">
+                        <span class="date-day">05</span>
+                        <span class="date-month">JUN</span>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">MTB Sierra Nevada</h3>
+                    <p class="event-location">📍 Granada, Sierra Nevada</p>
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Distancia:</span>
+                            <span class="detail-value">45 km</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Voluntarios:</span>
+                            <span class="detail-value">5 / 12</span>
+                        </div>
+                    </div>
+                    <div class="event-roles">
+                        <span class="role-tag">Seguridad</span>
+                        <span class="role-tag">Primeros Auxilios</span>
+                    </div>
+                    <button class="btn-primary" onclick="showSuccess()">Inscribirme</button>
+                </div>
+            </div>
+
+            <!-- Event Card 4 -->
+            <div class="event-card">
+                <div class="event-badge">PRÓXIMAMENTE</div>
+                <div class="event-image" style="background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);">
+                    <div class="event-date">
+                        <span class="date-day">18</span>
+                        <span class="date-month">JUN</span>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">Ruta del Camino</h3>
+                    <p class="event-location">📍 Barcelona, Montserrat</p>
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Distancia:</span>
+                            <span class="detail-value">95 km</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Voluntarios:</span>
+                            <span class="detail-value">15 / 18</span>
+                        </div>
+                    </div>
+                    <div class="event-roles">
+                        <span class="role-tag">Control</span>
+                        <span class="role-tag">Fotografía</span>
+                        <span class="role-tag">Limpieza</span>
+                    </div>
+                    <button class="btn-primary" onclick="showSuccess()">Inscribirme</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Benefits Section -->
+<section class="benefits-section" id="voluntarios">
+    <div class="container">
+        <h2 class="section-title">¿POR QUÉ SER VOLUNTARIO?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🚴</div>
+                <h3>Pasión por el Ciclismo</h3>
+                <p>Vive la emoción de los eventos desde adentro</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">👥</div>
+                <h3>Conoce Gente</h3>
+                <p>Conecta con otros apasionados del ciclismo</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🎁</div>
+                <h3>Beneficios Exclusivos</h3>
+                <p>Camisetas, descuentos y acceso VIP</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">⭐</div>
+                <h3>Experiencia Única</h3>
+                <p>Contribuye al éxito de grandes eventos</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Success Message -->
+<div class="success-message" id="successMessage">
+    <div class="success-content">
+        <div class="success-icon">✓</div>
+        <h3>¡Inscripción Completada!</h3>
+        <p>Recibirás un correo con más información</p>
+    </div>
+</div>
+
+
+
+<!--FOOTER----------------------------------------------------------------------------------------------------------------------------->
+    <footer>
+      <div class="footer-top">
+        <div>
+          <h4>Eventos</h4>
+          <ul>
+            <li><a href="#">Próximos</a></li>
+            <li><a href="#">Populares</a></li>
+            <li><a href="#">Recomendados</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Organiza</h4>
+          <ul>
+            <li><a href="#">Crear evento</a></li>
+            <li><a href="#">Mis eventos</a></li>
+            <li><a href="#">Colaboradores</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Sobre Nosotros</h4>
+          <ul>
+            <li><a href="../html/sobrenosotros.html">Quiénes somos</a></li>
+            <li><a href="../html/contacto.html">Contacto</a></li>
+            <li><a href="#">Soporte</a></li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="footer-social">
+        <a href="https://www.facebook.com/?locale=es_ES"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i>Instagram</a>
+        <a href="https://x.com/?lang=es"><i class="fa-brands fa-x-twitter"></i>X</a>
+        <a href="https://www.youtube.com/?app=desktop&hl=es"><i class="fa-brands fa-youtube"></i>YouTube</a>
+        <a href="https://es.linkedin.com/?mcid=6968657504633266178&src=go-pa&trk=sem-ga_campid.18146679037_asid.140850334975_crid.694860685343_kw.linkedin_d.c_tid.kwd-148086543_n.g_mt.e_geo.9208032&cid=&gclsrc=aw.ds&gad_source=1&gad_campaignid=18146679037&gbraid=0AAAAAojDCNT0Ag7J5gomBQBf1rdCoUq6C&gclid=CjwKCAiAzrbIBhA3EiwAUBaUdUe-mPtv4XCpY926bD2V-J_bU9wXIoIUN3QzDM_obtIhrAdg3qpywBoCnBIQAvD_BwE"><i class="fa-brands fa-linkedin-in"></i>LinkedIn</a>
+      </div>
+    
+      <div class="footer-bottom">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Cookies</a>
+        <a href="#">Condiciones de uso</a>
+        <a href="#">Avisos legales</a>
+        <p>&copy; 2025 WE EVENTS. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+      {pageLanguage: 'es'}, // idioma original de la página
+      'google_translate_element' // id del contenedor
+      );
+      }
+      </script>
+    
+    <script src="../js/registro.js"></script>
+    <script src="../js/Eventos.js"></script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="../js/menu.js"></script>
+</body>
+</html>
