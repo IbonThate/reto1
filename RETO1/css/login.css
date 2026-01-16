@@ -13,12 +13,6 @@
   justify-content: center;
 
   backdrop-filter: blur(10px);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 51, 57, 0.6) 50%,
-    rgba(0, 0, 0, 0.5) 100%
-  );
 
   opacity: 0;
   visibility: hidden;
@@ -35,15 +29,15 @@
 .login-box {
   position: relative;
   z-index: 1;
+  background-color: black;
 
   border-radius: 12px;
   padding: 2rem;
   width: 320px;
-  background-color: white;
 
   transform: translateY(-40px) scale(0.95);
   opacity: 0;
-  transition: all 0.4s ease;
+  transition: all 0.2s ease;
 }
 
 #login-toggle:checked ~ #login-modal .login-box {
@@ -54,7 +48,7 @@
 .login-box h1 {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: rgb(0, 0, 0);
+  color: white;
   font-size: 1.6rem;
 }
 
@@ -65,7 +59,7 @@
 }
 
 .login-box label {
-  color: rgb(0, 0, 0);
+  color: white;
   font-size: 0.9rem;
 }
 
@@ -75,7 +69,7 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 0.6rem 0.75rem;
-  color: black;
+  color: white;
   transition: border 0.2s ease, background 0.2s ease;
 }
 

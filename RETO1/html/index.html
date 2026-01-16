@@ -13,11 +13,7 @@
 </head>
 
 <body>
-  <div id="splash">
-    <img src="../assets/2-removebg-preview.png" alt="Logo" class="splash-logo">
-  </div>
-
-<!--HEADER----------------------------------------------------------------------------------------------------------------------------->
+<!-- HEADER -------------------------------------------------------------------->
   <header>
     <a href="index.html"><img src="../assets/2-removebg-preview.png" alt="" class="logo"></a>
     <div id="search">
@@ -30,12 +26,12 @@
       </button>
 
       <ul class="nav-list" id="menu-list">
-        <li><a href="/RETO1/html/Eventos.html">Eventos</a></li>
-        <li><a href="/RETO1/html/sobrenosotros.html">Nosotros</a></li>
-        <li><a href="/RETO1/html/contacto.html">Contacto</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="sobrenosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
         <li><label for="login-toggle" class="nav-login">Iniciar sesión</label></li>
         <li><label for="register-toggle" class="nav-register">Registrarse</label></li>
-        <!--<li><a href="/RETO1/html/Configuracion.html">Configuración</a></li>-->
+        <!--<li><a href="configuracion.html">Configuración</a></li>-->
         <div id="google_translate_element"></div>
       </ul>
     </nav>
@@ -45,7 +41,9 @@
     <h1>WE EVENTS!</h1>
   </div>
 
-<!-- Mission Section -->
+<!-- Mission Section -------------------------------------------------------------------->
+<details>
+  <summary id="summary">NUESTRA MISIÓN</summary>
 <section class="section mission-section">
   <div class="container">
       <div class="content-grid">
@@ -57,13 +55,13 @@
               </p>
           </div>
           <div class="content-image">
-              <img src="/RETO1/assets/pexels-wendywei-1190297.jpg" alt="Misión">
+              <img src="../assets/pexels-wendywei-1190297.jpg" alt="Misión">
           </div>
       </div>
   </div>
 </section>
 
-<!-- Stats Section -->
+<!-- Stats Section -------------------------------------------------------------------->
 <section class="section stats-section">
   <div class="container">
       <div class="stats-grid">
@@ -90,10 +88,9 @@
       </div>
   </div>
 </section>
+</details>
 
-
-
-<!--CATEGORIAS-------------------------------------------------------------------->
+<!-- CATEGORIAS -------------------------------------------------------------------->
   <section id="cat">
     <div class="cat">
       <h2><a href="">Eventos Fijos</a></h2>
@@ -103,7 +100,7 @@
     </div>
   </section>
 
-<!--CARRuSEL-------------------------------------------------------------------------------->
+<!-- CARRUSEL -------------------------------------------------------------------->
   <section class="carousel" aria-label="Carrusel de eventos">
     <h1>EVENTOS DESTACADOS</h1>
     <button class="carousel__btn carousel__btn--prev" aria-label="Anterior">&lt;</button>
@@ -119,7 +116,7 @@
 
         <div class="slide" style="background-image: url('../assets/persona.jpg');">
           <div class="slide__content">
-            <h2>Maraton</h2>
+            <h2>Maratón</h2>
             <p>Descripción breve de la Maratón.</p>
           </div>
         </div>
@@ -136,7 +133,7 @@
     <button class="carousel__btn carousel__btn--next" aria-label="Siguiente">&gt;</button>
   </section>
 
-<!--FOOTER------------------------------------------------------------------------------------------------------->
+<!-- FOOTER -------------------------------------------------------------------->
   <footer>
   <div class="footer-top">
     <div>
@@ -182,7 +179,7 @@
   </div>
 </footer>
 
-  <!-- LOGIN ---------------------------------------------------------------->
+  <!-- LOGIN -------------------------------------------------------------------->
   <input type="radio" name="modal-toggle" id="close-toggle" checked hidden> 
   <input type="radio" name="modal-toggle" id="login-toggle" hidden>
   <div id="login-modal">
@@ -202,7 +199,7 @@
     </div>
   </div>
 
-  <!-- REGISTRO -------------------------------------------------------->
+  <!-- REGISTRO -------------------------------------------------------------------->
   <input type="radio" name="modal-toggle" id="register-toggle" hidden>
   <input type="radio" name="modal-toggle" id="close-register-toggle" checked hidden>
 
@@ -217,7 +214,7 @@
       <button id="casual-btn">Casual</button>
     </div>
     
-    <!-- FORMULARIO ORGANIZADOR -->
+    <!-- FORMULARIO ORGANIZADOR -------------------------------------------------------------------->
     <form id="organizador-form" class="form-section active">
       <label for="nif">NIF / DNI</label>
       <input type="text" id="nif" name="nif" required>
@@ -242,7 +239,7 @@
       <input type="submit" value="Registrar">
     </form>
 
-    <!-- FORMULARIO CASUAL -->
+    <!-- FORMULARIO CASUAL -------------------------------------------------------------------->
     <form id="casual-form" class="form-section">
       <label for="dni">DNI</label>
       <input type="text" id="dni" name="dni" required>
@@ -269,20 +266,9 @@
   </div>
 </div>
 
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-  {pageLanguage: 'es'}, // idioma original de la página
-  'google_translate_element' // id del contenedor
-  );
-  }
-  </script>
-
   <script src="../js/carousel.js"></script>
   <script src="../js/menu.js"></script>
-  <script src="../js/splash.js"></script>
   <script src="../js/registro.js"></script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

@@ -7,12 +7,6 @@
   z-index: 1000;
 
   backdrop-filter: blur(10px);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 51, 57, 0.6) 50%,
-    rgba(0, 0, 0, 0.5) 100%
-  );
 }
 
 #register-toggle:checked ~ #register-modal {
@@ -22,7 +16,6 @@
 .modal-overlay {
   position: absolute;
   inset: 0;
-  backdrop-filter: blur(4px);
   cursor: pointer;
 }
 
@@ -32,13 +25,13 @@
 
 .register-box {
   position: relative;
-  background: #ffffff;
+  background: black;
   color: #fff;
   padding: 2.5rem;
   border-radius: 1rem;
   width: 90%;
   max-width: 420px;
-  animation: fadeInUp 0.4s ease forwards;
+  animation: fadeInUp 0.2s ease forwards;
   max-height: 90vh;
   overflow-y: auto;
   overflow-x: hidden;
@@ -71,11 +64,11 @@ h1 {
   text-align: center;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: rgb(0, 0, 0);
+  color: white;
 }
 
 .register-box label {
-  color: rgb(0, 0, 0);
+  color: white;
   font-size: 0.9rem;
 }
 
@@ -89,7 +82,7 @@ h1 {
 .account-type button {
   background: none;
   border: 1px solid #003639;
-  color: #003639;
+  color: white;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
