@@ -48,8 +48,8 @@ header {
   margin: 0;
 }
 
-.logo {
-  width: 56px;
+.logo{
+  width: 120px;
   height: auto;
   flex: 0 0 auto;
   display: block;
@@ -99,6 +99,14 @@ header {
   position: relative;
   padding-top: 64px;
   margin-bottom: 15px;
+}
+
+#title img {
+  width: auto;
+  height: 300px;          
+  max-width: 90%;
+  object-fit: contain;
+  pointer-events: none;
 }
 
 #title::before {
@@ -235,8 +243,8 @@ header {
   align-items: center;
   background: linear-gradient(
       120deg,
-      rgba(0, 0, 0, 0.85) 20%,
-      rgba(0, 90, 110, 0.6)
+   #633103 10%,
+    #78CF80
     ),
     url("../assets/categorias.jpg");
   background-size: cover;
