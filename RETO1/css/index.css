@@ -6,9 +6,9 @@
 }
 
 :root {
-  --bg: #000;
-  --panel: #161616;
-  --text: #fff;
+  --bg: #ffffff;
+  --panel: #ff0000;
+  --text: #633103;
   --max-width: 100%;
   --radius: 6px;
 }
@@ -380,6 +380,11 @@ summary {
     border-radius: 10px;
     letter-spacing: 6px;
     font-weight: 700;
+    background-color: #78CF80;
+}
+summary:hover {
+  transform: translateY(-6px);
+  filter: brightness(1.25);
 }
 
 summary::-webkit-details-marker,

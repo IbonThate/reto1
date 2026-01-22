@@ -77,16 +77,16 @@ footer {
 .footer-social a {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  color: #633103;
   text-decoration: none;
-  font-size: 0.85rem;
-  transition: color 0.25s ease;
+}
+.footer-social img{
+  width: 30px;
+}
+.footer-social a  #facebook{ 
+  width: 3px;
 }
 
-.footer-social a:hover {
-  color: var(--accent);
-}
+
 
 .footer-social i {
   font-size: 1.1rem;
