@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="stylesheet" href="../css/registro.css">
+    <title>Contact Us</title>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="../assets/fotos personales/umaia_definitivo.png" alt="" class="logo"></a>
+        <div id="search">
+          <input type="search" placeholder="Search">
+        </div>
+    <nav class="main-nav">
+          <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">
+            <span class="hamburger"></span>
+          </button>
+
+          <ul class="nav-list" id="menu-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="eventos.html">Events</a></li>
+            <li><a href="sobrenosotros.html">About Us</a></li>
+            <li><label for="login-toggle" class="nav-login">Log In</label></li>
+            <li><label for="register-toggle" class="nav-register">Sign Up</label></li>
+            <div id="google_translate_element"></div>
+          </ul>
+        </nav>
+      </header>
+
+<input type="radio" name="modal-toggle" id="close-toggle" checked hidden> 
+<input type="radio" name="modal-toggle" id="login-toggle" hidden>
+<div id="login-modal">
+  <label for="login-toggle" class="modal-overlay"></label>
+  <label for="close-toggle" class="modal-overlay"></label>
+  <div class="login-box">
+    <label for="close-toggle" class="login-close">&times;</label>
+    <h1>Log In</h1>
+    <form>
+      <label for="mail">Email Address</label>
+      <input type="text" name="mail" id="mail" required>
+      <label for="pwd">Password</label>
+      <input type="password" name="pwd" id="pwd" required>
+      <label for="register">Don't have an account yet? <label for="register-toggle" class="register">Sign up</label></label>
+      <input type="submit" value="Enter">
+    </form>
+  </div>
+</div>
+
+<input type="radio" name="modal-toggle" id="register-toggle" hidden>
+<input type="radio" name="modal-toggle" id="close-register-toggle" checked hidden>
+
+<div id="register-modal">
+<label for="close-register-toggle" class="modal-overlay"></label>
+<div class="register-box">
+  <label for="close-register-toggle" class="register-close">&times;</label>
+  <h1>Create Account</h1>
+
+  <div class="account-type">
+    <button id="organizador-btn" class="active">Organizer</button>
+    <button id="casual-btn">Casual</button>
+  </div>
+  
+  <form id="organizador-form" class="form-section active">
+    <label for="nif">Tax ID / NIF</label>
+    <input type="text" id="nif" name="nif" required>
+
+    <div id="cantidad-container">
+      <label for="cantidad">Number of people</label><br>
+      <input type="radio" name="cantidad-personas" id="person-1">
+      <label for="person-1">less than 50</label><br>
+      <input type="radio" name="cantidad-personas" id="person-2">
+      <label for="person-2">50 - 100</label><br>
+      <input type="radio" name="cantidad-personas" id="person-3">
+      <label for="person-3">100 - 500</label><br>
+      <input type="radio" name="cantidad-personas" id="person-4">
+      <label for="person-4">more than 500</label>
+    </div>
+
+    <label for="nombre-empresa">Company Name</label>
+    <input type="text" id="nombre-empresa" name="nombre-empresa">
+    
+    <label for="login">Already have an account? <label for="login-toggle" class="login">Log in</label></label>
+
+    <input type="submit" value="Register">
+  </form>
+
+  <form id="casual-form" class="form-section">
+    <label for="dni">ID Card / DNI</label>
+    <input type="text" id="dni" name="dni" required>
+
+    <label for="nombre">Full Name</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="pais">Country</label>
+    <input type="text" id="pais" name="pais" required>
+
+    <label for="codigo">Postal Code</label>
+    <input type="text" id="codigo" name="codigo" required>
+
+    <label for="telefono">Phone Number</label>
+    <input type="tel" id="telefono" name="telefono" required placeholder="+34 666666666">
+
+    <label for="gmail">Email Address</label>
+    <input type="email" id="gmail" name="gmail" required placeholder="yourname@gmail.com">
+
+    <label for="login">Already have an account? <label for="login-toggle" class="login">Log in</label></label>
+
+    <input type="submit" value="Register">
+  </form>
+</div>
+</div>
+
+    <div class="contenedor-formulario">
+        <h2>Contact Us</h2>
+        <p>Please complete the following form and we will get in touch with you as soon as possible.</p>
+
+        <form action="procesar_formulario.php" method="POST">
+            
+            <div class="campo-formulario">
+                <label for="nombre">Full Name:</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Your name" aria-required="true">
+            </div>
+
+            <div class="campo-formulario">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required placeholder="your.email@example.com" aria-required="true">
+            </div>
+
+            <div class="campo-formulario">
+                <label for="telefono">Phone (Optional):</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="e.g.: +34 123 456 789">
+            </div>
+
+            <div class="campo-formulario">
+                <label for="asunto">Subject:</label>
+                <select id="asunto" name="asunto" required aria-required="true">
+                    <option value="" disabled selected>Select a subject</option>
+                    <option value="consulta">General Inquiry</option>
+                    <option value="soporte">Technical Support</option>
+                    <option value="negocios">Business Proposal</option>
+                    <option value="otro">Other</option>
+                </select>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="mensaje">Message:</label>
+                <textarea id="mensaje" name="mensaje" rows="6" required placeholder="Write your message here..." aria-required="true"></textarea>
+            </div>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+<footer>
+      <div class="footer-top">
+        <div>
+          <h4>Events</h4>
+          <ul>
+            <li><a href="#">Upcoming</a></li>
+            <li><a href="#">Popular</a></li>
+            <li><a href="#">Recommended</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4>Organize</h4>
+          <ul>
+            <li><a href="#">Create event</a></li>
+            <li><a href="#">My events</a></li>
+            <li><a href="#">Collaborators</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="../html/sobrenosotros.html">Who we are</a></li>
+            <li><a href="../html/contacto.html">Contact</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="footer-social">
+        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i>Instagram</a>
+        <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i>X</a>
+        <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i>YouTube</a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i>LinkedIn</a>
+      </div>
+    
+      <div class="footer-bottom">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookies</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Legal Notices</a>
+        <p>&copy; 2025 WE EVENTS. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../js/registro.js"></script>
+    <script src="../js/menu.js"></script>
+</body>
+</html>

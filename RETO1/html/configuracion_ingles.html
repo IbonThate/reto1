@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/registro.css">
+    <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="stylesheet" href="../css/configuracion.css">
+    <title>Settings</title>
+</head>
+
+<body class="dark-mode">
+
+<header>
+        <a href="index.html"><img src="../assets/fotos personales/umaia_definitivo.png" alt="" class="logo"></a>
+        <div id="search">
+            <input type="search" placeholder="Search">
+        </div>
+
+        <nav class="main-nav">
+            <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">
+                <span class="hamburger"></span>
+            </button>
+
+            <ul class="nav-list" id="menu-list">
+                <li><a href="/RETO1/html/index.html">Home</a></li>
+                <li><a href="/RETO1/html/sobrenosotros.html">About Us</a></li>
+                <li><a href="/RETO1/html/contacto.html">Contact</a></li>
+                <li><label for="login-toggle" class="nav-login">Log In</label></li>
+                <li><a href="/RETO1/html/index.html#register-modal">Register</a></li>  
+                <div id="google_translate_element"></div>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="Configuracion_container">
+
+            <h2>Configuration Options</h2>
+            <div id="config-cuenta" class="config-apartado">
+                <h3>👤 Account</h3>
+                <p>⁕ Profile information and security.</p>
+                <label for="nombre-usuario">Username:</label>
+                <input type="text" id="nombre-usuario" name="nombre-usuario" value="username" disabled>
+                <br><br>
+                <button>Change Password</button>
+                <button>Delete Account</button>
+            </div>
+
+            <br>
+
+            <div id="config-idioma" class="config-apartado">
+                <h3>🌍 Languages</h3>
+                <label for="select-idioma">Select language:</label>
+                <select id="select-idioma" name="idioma">
+                    <option value="es">Spanish</option>
+                    <option value="en" selected>English</option>
+                    <option value="fr">French</option>
+                </select>
+            </div>
+
+            <br>
+
+            <div id="config-notificaciones" class="config-apartado">
+                <h3>🔔 Notifications</h3>
+                <p>Settings for how we notify you.</p>
+
+                <div>
+                    <input type="checkbox" id="notif-email" name="notif-email" checked>
+                    <label for="notif-email">Receive email notifications</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="notif-push" name="notif-push">
+                    <label for="notif-push">Enable browser push notifications</label>
+                </div>
+            </div>
+
+            <br>
+
+            <div id="config-informacion" class="config-apartado">
+                <h3>i Information</h3>
+                <p>App data and licenses.</p>
+                <ul>
+                    <li>Version: 1.0.0</li>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <br>
+
+            <button class="guardar-cambios">Save Changes</button>
+
+            <br><br><br>
+        </section>
+    </main>
+<footer>
+                <div class="footer-top">
+                    <div>
+                        <h4>Events</h4>
+                        <ul>
+                            <li><a href="#">Upcoming</a></li>
+                            <li><a href="#">Popular</a></li>
+                            <li><a href="#">Recommended</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Organize</h4>
+                        <ul>
+                            <li><a href="#">Create Event</a></li>
+                            <li><a href="#">My Events</a></li>
+                            <li><a href="#">Collaborators</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="#">Who we are</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/?locale=en_US"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
+                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i>Instagram</a>
+                    <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i>X</a>
+                    <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i>YouTube</a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i>LinkedIn</a>
+                </div>
+
+                <div class="footer-bottom">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Legal Notices</a>
+                    <p>&copy; 2025 WE EVENTS. All rights reserved.</p>
+                </div>
+            </footer>
+
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                new google.translate.TranslateElement(
+                {pageLanguage: 'en'}, // original language updated to English
+                'google_translate_element' 
+                );
+                }
+            </script>
+
+            <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <script src="../js/menu.js"></script>
+
+</body>
+
+</html>
